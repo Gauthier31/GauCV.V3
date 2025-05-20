@@ -13,19 +13,41 @@
 </head>
 
 <body>
-    <nav class="d-flex ai-center jc-space-between">
+
+    <!-- Nav -->
+    <nav class="d-flex ai-center jc-space-between fixHeader">
         <div>
-            Acceuil
+            <a class="surligneAnim" href="#acceuil" onmouseover="textScrambled(this, 'ACCEUIL')">
+                ACCEUIL
+            </a>
         </div>
         <div class="d-flex g-50">
-            <p>Formation</p>
-            <p>Expériences</p>
-            <p>Compétences</p>
-            <p>Projets</p>
+            <p>
+                <a class="surligneAnim greenBackground" href="#formations"
+                    onmouseover="textScrambled(this, 'FORMATIONS')">
+                    FORMATIONS
+                </a>
+            </p>
+            <p>
+                <a class="surligneAnim bleuBackground" href="#experiences"
+                    onmouseover="textScrambled(this, 'EXPERIENCES')">
+                    EXPERIENCES
+                </a>
+            </p>
+            <p>
+                <a class="surligneAnim purpleBackground" href="#competences"
+                    onmouseover="textScrambled(this, 'COMPETENCES')">
+                    COMPETENCES
+                </a>
+            </p>
+            <p>
+                <a class="surligneAnim orangeBackground" href="#projets" onmouseover="textScrambled(this, 'PROJETS')">
+                    PROJETS
+                </a>
+            </p>
         </div>
     </nav>
-
-    <div class="d-flex noScroll fs-12" id="alerte">
+    <div class="d-flex noScroll fs-12 fixHeader" id="alerte">
         <p style="margin-right: 50vw">
             MASTER 2 MIAGE (Méthodes Informatiques Appliquées à la Gestion des
             Entreprises) option IDA (Ingénierie des Données et Apprentissage) à Toulouse Capitole</p>
@@ -37,25 +59,40 @@
             préférence dans l'état du Minnesota aux Etat-Unis)</p>
     </div>
 
-    <!-- Acceuil  -->
-    <div class="acceuil partie column jc-space-between">
+    <!-- Contact -->
+    <div class="vertical-div l-0 fixHeader" id="AnimInfoGauche">
+        <img class="reseau" alt="" src="images/Logo/LinkedIn.webp" />
+        <div class="vertical-ligne"></div>
+    </div>
 
-        <div>
-            <h1 class="">Gauthier BOE--GUIROLA</h1>
+    <div class="vertical-div r-0 fixHeader" id="AnimInfoDroite">
+        <p>boegauthier@gmail.com</p>
+        <div class="vertical-ligne"></div>
+    </div>
+
+    <!-- Acceuil  -->
+    <div id="acceuil"></div>
+    <div class="acceuil d-flex fd-column jc-space-between">
+
+        <div class="as-center">
+            <h1>Gauthier
+                <span class="surligne">BOE-GUIROLA</span>
+            </h1>
             <p class="sousTitre">Data Ingénieur</p>
 
-            <div class="d-flex jc-center mt-100">
-                <p class="resume">
+            <div class="d-flex jc-center mt-75">
+                <p class="resume scrabledWord">
                     Étudiant en 2nd année de Master MIAGE (Méthodes Informatiques Appliquées à la Gestion des
                     Entreprises)
-                    option IDA (Ingénierie des Données et Apprentissage) à l'Université Toulouse Capitole en alternance
+                    option IDA (Ingénierie des Données et Apprentissage) à l'Université Toulouse Capitole en
+                    alternance
                     dans
                     l'ESN SOPRA STERIA en tant que Data Ingénieur
                 </p>
             </div>
         </div>
 
-        <div class="interetDiv row g-20">
+        <div class="interetDiv d-flex g-20">
             <div class="interet">Art</div>
             <div class="interet">Volley-Ball</div>
             <div class="interet">Piano</div>
@@ -64,6 +101,7 @@
             <div class="interet">Film</div>
             <div class="interet">Dessin</div>
             <div class="interet">Bricolage</div>
+
             <div class="interet">Art</div>
             <div class="interet">Volley-Ball</div>
             <div class="interet">Piano</div>
@@ -75,6 +113,327 @@
         </div>
 
     </div>
+
+    <div class="imgVoyageurDiv d-flex mt-200 jc-center">
+        <div class="cardImg">
+            <div class="front">
+                <img class="imgVoyageur"
+                    src="images/Tableau/Caspar David Friedrich - Le Voyageur contemplant une mer de nuages.jpg" />
+            </div>
+
+            <div class="back">
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="sectionTwo v-hidden">
+
+        <div class="galleryBackground" style="display: none;">
+
+            <div class="pixelTab">
+                <div>
+                    <p>Claude Monet</p>
+                    <div class="d-flex">
+                        <img src="images/Tableau/Claude Monet - Le Bassin aux Nymphéas harmonie verte, 1898.jpg">
+                        <p class="wm-vertical-rl">Le Bassin aux Nymphéas harmonie verte, 1898</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pixelTab">
+                <div>
+                    <p>Claude Monet</p>
+                    <div class="d-flex">
+                        <img src="images/Tableau/Claude Monet - Étretat sous la pluie, 1886.jpg">
+                        <p class="wm-vertical-rl">Étretat sous la pluie, 1886</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pixelTab">
+                <div>
+                    <p>Claude Monet</p>
+                    <div class="d-flex">
+                        <img src="images/Tableau/Claude Monet - La Pie, 1592.jpg">
+                        <p class="wm-vertical-rl">La Pie, 1592</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formations -->
+        <div class="partie" id="formations">
+
+            <div class="capteursectionTwo d-none"></div>
+
+            <!-- Invite de commande -->
+            <div class="terminalBloc">
+                <div class="row mb-5">
+                    <div class="d-flex">
+                        <img id="progLeft" onclick="progression(-1)" src="images/Icon/arrow left dark.svg"
+                            style="visibility: hidden;" />
+                        <img id="progRight" onclick="progression(1)" src="images/Icon/arrow right dark.svg" />
+                    </div>
+                </div>
+                <div>
+                    <div class="terminalHead">Invite de commande</div>
+                    <div id="terminalBody">
+                        GauCV [version 68.2]
+                        <br />(c) Gau Corporation. Tous droits réservés.
+                    </div>
+                </div>
+                <div class="row jc-space-between mt-20">
+                    <p></p>
+                    <p id="progEncours">Progression en cours ...</p>
+                    <p id="pourcentageTxt">0%</p>
+                </div>
+                <div class="barreProg">
+                    <div id="progression"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Expérience -->
+        <div class="partie" id="experiences">
+
+            <!-- Experience 5 -->
+            <div class="grid experiencesVue jc-center">
+                <div class="expProDate">
+                    <p class="date animeTexte2">Septembre 2023 - En cours</p>
+                </div>
+
+                <div class="exProligne">
+                    <div class="cercleNoir green-gradient" title="Base de Données">
+                    </div>
+                    <div class="hrBlack"></div>
+                </div>
+
+                <div class="expProDetail">
+                    <div class="detail green-gradient">
+                        <p class="expTitre fs-24">Data Ingénieur</p>
+                        <p class="txtNoirSecond">Sopra Steria en alternance, Colomiers (31770)</p>
+                        <p class="txtNoirSecond mb-20">Externe à Airbus, Blagnac (31500)</p>
+                        <p class="ta-justify">
+                            Mis en place d'un système d'alerte et de notification pour alerter les Data Owner
+                            d'Airbus
+                            du nombre d'utilsateur ayant accès au données
+                        </p>
+                        <p class="txtNoirSecond mt-20">
+                            <a class="label">Foundry</a>
+                            <a class="label">TypeScript</a>
+                            <a class="label">PySpark</a>
+                        </p>
+                    </div>
+
+                    <div class="lienDetail">
+                        <div class="lienDetailEnfant"></div>
+                    </div>
+
+                    <div class="detail green-gradient">
+                        <p class="ta-justify">
+                            Gestion des données des pièces d'avions des compagnies aériennes
+                            clientes d'Airbus
+                        </p>
+                        <p class="txtNoirSecond mt-20">
+                            <a class="label">Base de données</a>
+                            <a class="label">SQL</a>
+                            <a class="label">Python</a>
+                            <a class="label">Javascript</a>
+                            <a class="label">PySpark</a>
+                            <a class="label">Foundry</a>
+                            <a class="label">Agilité</a>
+                        </p>
+                    </div>
+
+                    <div class="lienDetail">
+                        <div class="lienDetailEnfant"></div>
+                    </div>
+
+                    <div class="detail green-gradient">
+                        <p class="ta-justify">
+                            Gestion des données des pièces d'avions des compagnies aériennes clientes d'Airbus
+                        </p>
+                        <p class="txtNoirSecond mt-20">
+                            <a class="label">Base de données</a>
+                            <a class="label">SQL</a>
+                            <a class="label">Python</a>
+                            <a class="label">Javascript</a>
+                            <a class="label">PySpark</a>
+                            <a class="label">Slate</a>
+                            <a class="label">Foundry</a>
+                            <a class="label">Agilité</a>
+                            <a class="label">Train SAFe</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience 4 -->
+            <div class="grid experiencesVue jc-center">
+                <div class="expProDetail">
+                    <div class="detail purple-gradient">
+                        <p class="expTitre fs-24">Développeur Full Stack</p>
+                        <p class="txtNoirSecond mb-20">Sopra Steria en alternance, Colomiers (31770)</p>
+                        <p class="ta-justify">
+                            Développement d'une application pour gérer et assister les techniciens
+                            d'Orange lorsqu'ils sont en intervention chez les clients.</p>
+                        <p class="txtNoirSecond mt-20">
+                            <a class="label">Angular CLI</a>
+                            <a class="label">Spring Boot</a>
+                            <a class="label">Maven</a>
+                            <a class="label">DevOps</a>
+                            <a class="label">Agilité</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="exProligne">
+                    <div class="cercleNoir purple-gradient" title="Développement Web">
+                    </div>
+                    <div class="hrBlack"></div>
+                </div>
+
+                <div class="expProDate">
+                    <p class="date animeTexte2">Septembre 2022 - Aout 2023</p>
+                </div>
+            </div>
+
+            <!-- Experience 3 -->
+            <div class="grid experiencesVue jc-center">
+                <div class="expProDate">
+                    <p class="date animeTexte2 bbs-d">Juin 2022 - Aout 2022</p>
+                </div>
+
+                <div class="exProligne">
+                    <div class="cercleNoir" title="Emploi Saisonnier"></div>
+                    <div class="hrBlack"></div>
+                </div>
+
+                <div class="expProDetail">
+                    <div class="detail bs-dashed">
+                        <p class="expTitre fs-24">Agent des espaces verts</p>
+                        <p class="txtNoirSecond mb-20">Camping Eurosol, Vielle-Saint-Girons (40560)</p>
+                        <p class="ta-justify">
+                            Emploi saisonnier en tant qu'agent d'entretient des espaces verts et aquatique.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="grid experiencesVue jc-center">
+                <div class="expProDetail">
+                    <div class="detail blue-gradient">
+                        <p class="expTitre fs-24">Développeur Full Stack</p>
+                        <p class="txtNoirSecond mb-20">Les Comptoirs du Monde, Saint-Alban (31140)</p>
+                        <p class="ta-justify">Développement d'une application SIRH pour gérer
+                            les absences et les congés des employés de la compagnies</p>
+                        <p class="txtNoirSecond mt-20">
+                            <a class="label">Laravel</a>
+                            <a class="label">SQL</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="exProligne">
+                    <div class="cercleNoir blue-gradient" title="Développement Web">
+                    </div>
+                    <div class="hrBlack"></div>
+                </div>
+
+                <div class="expProDate">
+                    <p class="date animeTexte2">Mai 2022 - Juin 2022</p>
+                </div>
+            </div>
+
+            <!-- Experience 1 -->
+            <div class="grid experiencesVue jc-center mb-150">
+                <div class="expProDate">
+                    <p class="date animeTexte2 bbs-d">Juin 2021 - Aout 2021</p>
+                </div>
+
+                <div class="exProligne">
+                    <div class="cercleNoir" title="Emploi Saisonnier"></div>
+                    <div class="hrBlack"></div>
+                </div>
+
+                <div class="expProDetail">
+
+                    <div class="detail bs-dashed">
+                        <p class="expTitre fs-24">Préparateur de commande</p>
+                        <p class="txtNoirSecond mb-20">Codis Aquitaine, Tarnos (40312)</p>
+                        <p class="ta-justify">
+                            Emploi saisonnier en tant que préparateur de commande dans le but
+                            de collecter, organiser et conditionner les articles
+                            pour les expéditions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cardLanding" id="competences">
+        <h2>Compétences</h2>
+    </div>
+
+    <!-- Compétences -->
+    <div class="partie sectionBD green-gradient">
+        <h2>Base de données</h2>
+
+    </div>
+
+    <div class="partie sectionWeb blue-gradient">
+        <h2>Web</h2>
+
+    </div>
+
+    <div class="partie sectionDev purple-gradient">
+        <h2>Développement</h2>
+    </div>
+
+    <div class="partie sectionLangue">
+        <h2>Langue Vivante</h2>
+    </div>
+
+    <div id="transitionProjet" id="projets" onclick="animeGrid()">
+
+    </div>
+
+    <footer>
+        <hr />
+        <code class="row jc-between mb-20">
+                <div>
+                    <p class="fsFooter2">Contact</p>
+                    <p class="fsFooter1"><a href="mailto:boegauthier@gmail.com">boegauthier@gmail.com</a></p>
+                    <p class="fsFooter1">06.51.67.44.58</p>
+                </div>
+                <p class="fsFooter1">Copyright©2023</p>
+                <p class="fsFooter1"><a>GauCV.vercel.app</a></p>
+            </code>
+        <code class="fsFooter2">
+                l'ensemble du site a été conçu, développé et traduit par moi.
+            </code>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+
+    <script src="js/scriptGSAP.js"></script>
+
+    <script src="js/bd/formation.js"></script>
+    <script src="js/bd/projet.js"></script>
+
+    <script src="js/script.js" defer></script>
 
 </body>
 
