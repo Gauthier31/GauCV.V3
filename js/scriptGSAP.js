@@ -129,7 +129,6 @@ ScrollTrigger.create({
     endTrigger: ".cardImg",
     end: "top -30%",
     pin: true,
-    // markers: true,
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -318,7 +317,7 @@ document.querySelectorAll(".sectionBD").forEach((elem) => {
                 start: "top 100%",
                 end: "top 0%",
                 scrub: true,
-                markers: true
+                //markers: true
             }
         }
     );
@@ -378,7 +377,7 @@ document.querySelectorAll(".sectionLangue").forEach((elem) => {
                 start: "top 100%",
                 end: "top 0%",
                 scrub: true,
-                markers: true
+                //markers: true
             }
         }
     );
@@ -387,24 +386,48 @@ document.querySelectorAll(".sectionLangue").forEach((elem) => {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////// Compétences ///////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+function createGrid() {
+    console.log("createGrid")
+    nbRowPixel = Math.floor(windowHeight / 100);
+    nbColPixel = Math.floor(windowWidth / 100);
 
-gsap.to("#transitionProjet .pixel", {
-    opacity: 1,
-    duration: 0.5,
+    heightPixel = windowHeight / nbRowPixel;
+    widthPixel = windowWidth / nbColPixel;
+
+    console.log(nbRowPixel, heightPixel, nbColPixel, widthPixel)
+
+    for (var i = 0; i < nbRowPixel; i++) {
+        for (var j = 0; j < nbColPixel; j++) {
+            document.getElementById("transitionProjet").innerHTML += `
+                <div class="pixel pixelWhite" style="width:${widthPixel - 1}px;height:${heightPixel}px"></div>
+                `;
+        }
+    }
+
+    console.log("end createGrid")
+}
+createGrid();
+
+
+gsap.from("#transitionProjet .pixel", {
+    visibility: "hidden",
     stagger: { amount: 1, from: "random" },
     scrollTrigger: {
         trigger: "#transitionProjet",
-        start: "top 100%", // Start the animation when the top of #transitionProjet reaches 100% of the viewport height
-        end: "top 0%", // End the animation when the top of #transitionProjet reaches 0% of the viewport height
-        toggleActions: "restart none none reverse",
-        markers: true, // Optional: Add markers for debugging
-        onEnter: function () {
-            // Additional actions when the trigger is entered
-            console.log("Animation started");
-        }
+        start: "top 0%",
+        end: "top -30%",
+        scrub: true,
+        markers: true,
     }
 });
 
+ScrollTrigger.create({
+    id: "sticky",
+    trigger: "#transitionProjet",
+    start: "top 0%",
+    end: "top -100%",
+    pin: true,
+});
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////

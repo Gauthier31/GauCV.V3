@@ -555,12 +555,15 @@ h2 {
     font-size: min(100px, 7vw);
 }
 
+.competenceBody {
+    height: 150vh;
+    width: 100vw;
+}
+
 .sectionBD,
 .sectionWeb,
 .sectionDev,
 .sectionLangue {
-    height: 150vh;
-    width: 100vw;
     position: sticky;
     top: 0px;
 }
@@ -598,20 +601,19 @@ h2 {
 
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--blanc);
-    z-index: 50;
+    z-index: 200;
+    border: 1px solid var(--noir);
 }
 
 .pixel {
     border: 1px solid var(--noir);
-}
-
-.pixelWhite {
-    background-color: var(--blanc);
-}
-
-.pixelBlack {
     background-color: var(--noir);
+    visibility: visible;
+}
+
+.remplissage {
+    height: 100vh;
+    width: 100vw;
 }
 
 /* -------------- Footer -------------- */

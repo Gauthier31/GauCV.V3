@@ -144,46 +144,6 @@ document.querySelectorAll(".pixelTab div img").forEach(element => {
 ///////////////////////////////////////////////// Projets /////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function createGrid() {
-    console.log("createGrid")
-    nbRowPixel = Math.floor(windowHeight / 200);
-    nbColPixel = Math.floor(windowWidth / 200);
-
-    heightPixel = windowHeight / nbRowPixel;
-    widthPixel = windowWidth / nbColPixel;
-
-    console.log(nbRowPixel, heightPixel, nbColPixel, widthPixel)
-
-    for (i = 0; i < nbRowPixel; i++) {
-        for (j = 0; j < nbColPixel; j++) {
-            document.getElementById("transitionProjet").innerHTML += `
-                <div class="pixel pixelWhite" style="width:${widthPixel}px;height:${heightPixel}px"></div>
-                `;
-        }
-    }
-
-    console.log("end createGrid")
-}
-createGrid();
-
-// function animeGrid() {
-
-//     var pixels = document.querySelectorAll(".pixel.pixelWhite");
-
-//     if (pixels.length === 0) {
-//         return;
-//     }
-
-//     var alea = Math.floor(Math.random() * pixels.length);
-
-//     pixels[alea].classList.add("pixelBlack");
-//     pixels[alea].classList.remove("pixelWhite");
-
-//     if (pixels.length > 1) {
-//         setTimeout(animeGrid, 1);
-//     }
-// }
-
 ////////////////////////////////////////////////// Interet /////////////////////////////////////////////////
 
 const interet = document.querySelectorAll('.interet.circleHover');
