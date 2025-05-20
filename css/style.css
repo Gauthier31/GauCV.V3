@@ -1,0 +1,179 @@
+:root {
+    --noir: #1e2124;
+    --grisFonce: #343434;
+}
+
+@font-face {
+    font-family: Alliance;
+    src: url("../Alliance\ No.2\ Regular.otf") format("opentype");
+}
+
+*::selection {}
+
+*::-webkit-scrollbar-track {}
+
+*::-webkit-scrollbar {}
+
+*::-webkit-scrollbar-thumb {}
+
+body {
+    font-family: Alliance;
+    /* font-feature-settings: "ss04" on; */
+    background-color: #ffffff;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    height: 50px;
+    width: 100vw;
+    padding: 0 50px;
+    border-bottom: 1px solid var(--noir)
+}
+
+#alerte {
+    font-family: monospace;
+    white-space: nowrap;
+    z-index: 100;
+
+    position: fixed;
+    top: 50px;
+    animation: defilement-alerte 40s infinite linear;
+}
+
+@keyframes defilement-alerte {
+    0% {
+        transform: translateX(0);
+        /* position initiale à droite */
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* position finale à gauche */
+    }
+}
+
+/* ----- Contact ----- */
+
+.vertical-div {
+    position: fixed;
+    bottom: 0px;
+    width: calc(100% / 12);
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    white-space: nowrap;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+.vertical-ligne {
+    height: 25vh;
+    width: 0px;
+    border-left: 1px solid var(--grisFonce);
+    margin-top: 10px;
+}
+
+.reseau {
+    width: 4dvw;
+    height: 4dvw;
+    max-width: 50px;
+    max-height: 50px;
+    border: 1px solid var(--grisFonce);
+    border-radius: 50%;
+    margin-top: 10px;
+    transition: box-shadow 1s ease-in-out;
+}
+
+.reseau>img {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* ---------- Acceuil ---------- */
+.acceuil {
+    height: 100vh;
+    width: 100vw;
+    padding: 25vh calc(100vw / 12);
+    padding-bottom: 5vh;
+    position: sticky;
+    top: 0;
+}
+
+h1 {
+    font-size: 100px;
+    top: 40%;
+    width: 100%;
+    font-weight: 100;
+}
+
+.sousTitre {
+    font-size: 40px;
+}
+
+.resume {
+    font-size: 20px;
+    max-width: 1000px;
+}
+
+.interet {
+    font-size: 60px;
+    padding: 5px 50px;
+    border-radius: 100px;
+    border: 1px solid;
+    white-space: pre;
+}
+
+.interetDiv {
+    width: max-content;
+    animation: defilement-interet 60s infinite linear;
+}
+
+@keyframes defilement-interet {
+    0% {
+        transform: translateX(-10%);
+        /* position initiale à droite */
+    }
+
+    100% {
+        transform: translateX(-60%);
+        /* position finale à gauche */
+    }
+}
+
+/* ----- Tableau ----- */
+.imgVoyageurDiv {
+    perspective: 1000px;
+    z-index: 200;
+}
+
+.cardImg {
+    height: 80vh;
+    width: 40vw;
+    box-shadow: 8px 12px 16px rgba(0, 0, 0, 0.4);
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back {
+    border: 1px solid var(--noir);
+    transform: rotateY(180deg);
+    background-color: rgb(255, 255, 255);
+}
+
+/* ---------- Formation ---------- */
+.formation {
+    height: 100vh;
+    width: 100vw;
+}

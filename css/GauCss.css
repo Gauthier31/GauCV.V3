@@ -1,0 +1,623 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+
+body::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari et Opera */
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.noScroll::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari et Opera */
+}
+
+
+/* ---------- Cursor ---------- */
+.c-w {
+    cursor: wait;
+}
+
+/* ---------- Row ---------- */
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.grid {
+    display: grid;
+}
+
+.row-cols-1,
+.row-cols-2 {
+    flex-wrap: wrap;
+}
+
+.row-cols-1>* {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.row-cols-2>* {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.fw-wrap {
+    flex-wrap: wrap;
+}
+
+.fw-nowrap {
+    flex-wrap: nowrap;
+}
+
+/* ---------- Column Size ---------- */
+.col-auto {
+    flex: 0 0 auto;
+    width: auto;
+}
+
+.col-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+}
+
+.col-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+}
+
+.col-3 {
+    flex: 0 0 auto;
+    width: 25%;
+}
+
+.col-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+}
+
+.col-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+}
+
+.col-6 {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.col-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%;
+}
+
+.col-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+}
+
+.col-9 {
+    flex: 0 0 auto;
+    width: 75%;
+}
+
+.col-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+}
+
+.col-11 {
+    flex: 0 0 auto;
+    width: 91.66666667%;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+/* ----- Ligne Size ----- */
+.lig-auto {
+    flex: 0 0 auto;
+    height: auto;
+}
+
+.lig-1 {
+    flex: 0 0 auto;
+    height: 8.33333333%;
+}
+
+.lig-2 {
+    flex: 0 0 auto;
+    height: 16.66666667%;
+}
+
+.lig-3 {
+    flex: 0 0 auto;
+    height: 25%;
+}
+
+.lig-4 {
+    flex: 0 0 auto;
+    height: 33.33333333%;
+}
+
+.lig-5 {
+    flex: 0 0 auto;
+    height: 41.66666667%;
+}
+
+.lig-6 {
+    flex: 0 0 auto;
+    height: 50%;
+}
+
+.lig-7 {
+    flex: 0 0 auto;
+    height: 58.33333333%;
+}
+
+.lig-8 {
+    flex: 0 0 auto;
+    height: 66.66666667%;
+}
+
+.lig-9 {
+    flex: 0 0 auto;
+    height: 75%;
+}
+
+.lig-10 {
+    flex: 0 0 auto;
+    height: 83.33333333%;
+}
+
+.lig-11 {
+    flex: 0 0 auto;
+    height: 91.66666667%;
+}
+
+.lig-12 {
+    flex: 0 0 auto;
+    height: 100%;
+}
+
+/* ---------- Flew-grow ---------- */
+
+.fg-1 {
+    flex-grow: 1;
+}
+
+.fg-0 {
+    flex-grow: 0;
+}
+
+/* ---------- Justify Content ---------- */
+.jc-center {
+    justify-content: center;
+}
+
+.jc-space-between {
+    justify-content: space-between;
+}
+
+.jc-space-around {
+    justify-content: space-around;
+}
+
+.jc-space-evenly {
+    justify-content: space-evenly;
+}
+
+.jc-flex-end {
+    justify-content: flex-end;
+}
+
+/* ---------- Gap ---------- */
+.g-5 {
+    gap: 5px;
+}
+
+.g-10 {
+    gap: 10px;
+}
+
+.g-20 {
+    gap: 20px;
+}
+
+.g-30 {
+    gap: 30px;
+}
+
+.g-50 {
+    gap: 50px;
+}
+
+.g-100 {
+    gap: 100px;
+}
+
+.g-50-0 {
+    gap: 50px 0;
+}
+
+.g-0-50 {
+    gap: 0 50px;
+}
+
+.g-10-50 {
+    gap: 10px 50px;
+}
+
+/* ---------- Display ---------- */
+.d-flex {
+    display: flex;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.v-hidden {
+    visibility: hidden;
+}
+
+.v-visible {
+    visibility: visible;
+}
+
+.fd-row {
+    flex-direction: row;
+}
+
+.fd-column {
+    flex-direction: column;
+}
+
+/* ---------- Position ---------- */
+.p-absolute {
+    position: absolute;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.p-sticky {
+    position: sticky;
+}
+
+.p-fixed {
+    position: fixed;
+}
+
+/* ---------- Vertical Align ---------- */
+.va-top {
+    vertical-align: top;
+}
+
+.va-bottom {
+    vertical-align: bottom;
+}
+
+/* ---------- Align Item---------- */
+.ai-center {
+    align-items: center;
+}
+
+.ai-end {
+    align-items: end;
+}
+
+/* ---------- Align Item---------- */
+.as-center {
+    align-self: center;
+}
+
+/* ---------- Margin ---------- */
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mt-75 {
+    margin-top: 75px;
+}
+
+.mt-100 {
+    margin-top: 100px;
+}
+
+.mt-200 {
+    margin-top: 200px;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+
+.mb-5 {
+    margin-bottom: 5px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.mb-75 {
+    margin-bottom: 75px;
+}
+
+.mb-100 {
+    margin-bottom: 100px;
+}
+
+.mb-150 {
+    margin-bottom: 150px;
+}
+
+.mb-200 {
+    margin-bottom: 200px;
+}
+
+.mr-20 {
+    margin-right: 20px;
+}
+
+.ml-20 {
+    margin-left: 20px;
+}
+
+
+/* ---------- Font ---------- */
+.fs-12 {
+    font-size: 12px;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-16 {
+    font-size: 1rem;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+
+.fs-24 {
+    font-size: 24px;
+}
+
+.fs-36 {
+    font-size: 36px;
+}
+
+.fs-64 {
+    font-size: 64px;
+}
+
+/* ---------- Texte---------- */
+.ta-left {
+    text-align: left;
+}
+
+.ta-center {
+    text-align: center;
+}
+
+.ta-justify {
+    text-align: justify;
+}
+
+.wm-vertical-rl {
+    writing-mode: vertical-rl;
+}
+
+/* ---------- Border ---------- */
+.bs-dashed {
+    border-style: dashed !important;
+}
+
+.bbs-d {
+    border-bottom-style: dashed !important;
+}
+
+/* ---------- Float ---------- */
+.f-r {
+    float: right;
+}
+
+.f-l {
+    float: left;
+}
+
+.r-0 {
+    right: 0;
+}
+
+.l-0 {
+    left: 0;
+}
+
+/* --------- Animation ---------- */
+
+.o-a {
+    overflow: auto;
+}
+
+.o-s {
+    overflow: scroll;
+}
+
+.o-v {
+    overflow: visible;
+}
+
+
+/* --------- Animation ---------- */
+.flipped>* {
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flipped:hover>* {
+    transform: rotateY(180deg);
+}
+
+
+/* Animation */
+.anim-left-to-right,
+.anim-right-to-left,
+.anim-top-to-bottom,
+.anim-bottom-to-top,
+.anim-opacity {
+    opacity: 0;
+    position: relative;
+}
+
+.anim .anim-left-to-right,
+.anim .anim-right-to-left,
+.anim .anim-top-to-bottom,
+.anim .anim-bottom-to-top,
+.anim .anim-opacity {
+    opacity: 1;
+}
+
+.anim-opacity {
+    transition:
+        opacity 0.8s linear !important;
+}
+
+/* left */
+.anim-left-to-right {
+    left: -300px;
+    transition: left 1s ease-in-out,
+        opacity 0.8s linear !important;
+}
+
+.anim .anim-left-to-right {
+    left: 0;
+}
+
+/* right */
+.anim-right-to-left {
+    right: -300px;
+    transition: right 1s ease-in-out,
+        opacity 0.8s linear !important;
+}
+
+.anim .anim-right-to-left {
+    right: 0;
+}
+
+/* top */
+.anim-top-to-bottom {
+    top: -300px;
+    transition: top 1s ease-in-out,
+        opacity 0.8s linear !important;
+}
+
+.anim .anim-top-to-bottom {
+    top: 0;
+}
+
+/* bottom */
+.anim-bottom-to-top {
+    bottom: -300px;
+    transition: bottom 1s ease-in-out,
+        opacity 0.8s linear !important;
+}
+
+.anim .anim-bottom-to-top {
+    bottom: 0;
+}
+
+/* Delais */
+/* en milliseconde */
+.td-250 {
+    transition-delay: 250ms !important;
+}
+
+.td-500 {
+    transition-delay: 500ms !important;
+}
+
+.td-750 {
+    transition-delay: 750ms !important;
+}
+
+.td-1000 {
+    transition-delay: 1000ms !important;
+}
+
+.td-1250 {
+    transition-delay: 1250ms !important;
+}
+
+.td-1500 {
+    transition-delay: 1500ms !important;
+}
+
+.td-1750 {
+    transition-delay: 1750ms !important;
+}
+
+.td-2000 {
+    transition-delay: 2000ms !important;
+}
+
+.td-2250 {
+    transition-delay: 2250ms !important;
+}
+
+.td-2500 {
+    transition-delay: 2500ms !important;
+}
+
+.td-2750 {
+    transition-delay: 2750ms !important;
+}
+
+.td-3000 {
+    transition-delay: 3000ms !important;
+}
