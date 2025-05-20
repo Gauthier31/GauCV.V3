@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Gauthier BOË--GUIROLA</title>
 
-    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" /> -->
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/GauCss.css">
@@ -14,14 +14,15 @@
 
 <body>
 
-    <!-- Nav -->
-    <nav class="d-flex ai-center jc-space-between fixHeader">
-        <div>
-            <a class="surligneAnim" href="#acceuil" onmouseover="textScrambled(this, 'ACCEUIL')">
-                ACCEUIL
-            </a>
-        </div>
-        <div class="d-flex g-50">
+
+    <header class="fixHeader">
+        <!-- Nav -->
+        <nav class="d-flex jc-space-between g-50">
+            <p>
+                <a class="surligneAnim" href="#acceuil" onmouseover="textScrambled(this, 'ACCEUIL')">
+                    ACCEUIL
+                </a>
+            </p>
             <p>
                 <a class="surligneAnim greenBackground" href="#formations"
                     onmouseover="textScrambled(this, 'FORMATIONS')">
@@ -45,19 +46,20 @@
                     PROJETS
                 </a>
             </p>
+        </nav>
+        <div class="d-flex noScroll fs-12" id="alerte">
+            <p style="margin-right: 50vw">
+                MASTER 2 MIAGE (Méthodes Informatiques Appliquées à la Gestion des
+                Entreprises) option IDA (Ingénierie des Données et Apprentissage) à Toulouse Capitole</p>
+            <p style="margin-right: 50vw;">En recherche d’emploi pour la fin de mon alternance à l’étranger (de
+                préférence dans l'état du Minnesota aux Etat-Unis)</p>
+            <p style="margin-right: 50vw;">MASTER 2 MIAGE (Méthodes Informatiques Appliquées à la Gestion des
+                Entreprises) option IDA (Ingénierie des Données et Apprentissage) à Toulouse Capitole</p>
+            <p style="margin-right: 50vw;">En recherche d’emploi pour la fin de mon alternance à l’étranger (de
+                préférence dans l'état du Minnesota aux Etat-Unis)</p>
         </div>
-    </nav>
-    <div class="d-flex noScroll fs-12 fixHeader" id="alerte">
-        <p style="margin-right: 50vw">
-            MASTER 2 MIAGE (Méthodes Informatiques Appliquées à la Gestion des
-            Entreprises) option IDA (Ingénierie des Données et Apprentissage) à Toulouse Capitole</p>
-        <p style="margin-right: 50vw;">En recherche d’emploi pour la fin de mon alternance à l’étranger (de
-            préférence dans l'état du Minnesota aux Etat-Unis)</p>
-        <p style="margin-right: 50vw;">MASTER 2 MIAGE (Méthodes Informatiques Appliquées à la Gestion des
-            Entreprises) option IDA (Ingénierie des Données et Apprentissage) à Toulouse Capitole</p>
-        <p style="margin-right: 50vw;">En recherche d’emploi pour la fin de mon alternance à l’étranger (de
-            préférence dans l'état du Minnesota aux Etat-Unis)</p>
-    </div>
+    </header>
+
 
     <!-- Contact -->
     <div class="vertical-div l-0 fixHeader" id="AnimInfoGauche">
@@ -93,23 +95,55 @@
         </div>
 
         <div class="interetDiv d-flex g-20">
-            <div class="interet">Art</div>
-            <div class="interet">Volley-Ball</div>
-            <div class="interet">Piano</div>
-            <div class="interet">Lecture</div>
-            <div class="interet">Musculation</div>
-            <div class="interet">Film</div>
-            <div class="interet">Dessin</div>
-            <div class="interet">Bricolage</div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Art
+            </div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Volley-Ball
+            </div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Piano
+            </div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Lecture
+            </div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Musculation
+            </div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Film
+            </div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Dessin
+            </div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Bricolage
+            </div>
 
-            <div class="interet">Art</div>
-            <div class="interet">Volley-Ball</div>
-            <div class="interet">Piano</div>
-            <div class="interet">Lecture</div>
-            <div class="interet">Musculation</div>
-            <div class="interet">Film</div>
-            <div class="interet">Dessin</div>
-            <div class="interet">Bricolage</div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Art
+            </div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Volley-Ball
+            </div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Piano
+            </div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Lecture
+            </div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Musculation
+            </div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Film
+            </div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Dessin
+            </div>
+            <div class="interet circleHover">
+                <span class="circleInteret"></span>Bricolage
+            </div>
         </div>
 
     </div>
@@ -206,13 +240,14 @@
                 </div>
 
                 <div class="exProligne">
-                    <div class="cercleNoir green-gradient" title="Base de Données">
+                    <div class="cercleNoir green-gradient" title="Données">
                     </div>
                     <div class="hrBlack"></div>
                 </div>
 
                 <div class="expProDetail">
-                    <div class="detail green-gradient">
+                    <div class="detail circleHover">
+                        <span class="circleDetail green-gradient"></span>
                         <p class="expTitre fs-24">Data Ingénieur</p>
                         <p class="txtNoirSecond">Sopra Steria en alternance, Colomiers (31770)</p>
                         <p class="txtNoirSecond mb-20">Externe à Airbus, Blagnac (31500)</p>
@@ -232,7 +267,8 @@
                         <div class="lienDetailEnfant"></div>
                     </div>
 
-                    <div class="detail green-gradient">
+                    <div class="detail circleHover">
+                        <span class="circleDetail green-gradient"></span>
                         <p class="ta-justify">
                             Gestion des données des pièces d'avions des compagnies aériennes
                             clientes d'Airbus
@@ -252,7 +288,8 @@
                         <div class="lienDetailEnfant"></div>
                     </div>
 
-                    <div class="detail green-gradient">
+                    <div class="detail circleHover">
+                        <span class="circleDetail green-gradient"></span>
                         <p class="ta-justify">
                             Gestion des données des pièces d'avions des compagnies aériennes clientes d'Airbus
                         </p>
@@ -274,7 +311,8 @@
             <!-- Experience 4 -->
             <div class="grid experiencesVue jc-center">
                 <div class="expProDetail">
-                    <div class="detail purple-gradient">
+                    <div class="detail circleHover">
+                        <span class="circleDetail purple-gradient"></span>
                         <p class="expTitre fs-24">Développeur Full Stack</p>
                         <p class="txtNoirSecond mb-20">Sopra Steria en alternance, Colomiers (31770)</p>
                         <p class="ta-justify">
@@ -326,7 +364,8 @@
             <!-- Experience 2 -->
             <div class="grid experiencesVue jc-center">
                 <div class="expProDetail">
-                    <div class="detail blue-gradient">
+                    <div class="detail circleHover">
+                        <span class="circleDetail blue-gradient"></span>
                         <p class="expTitre fs-24">Développeur Full Stack</p>
                         <p class="txtNoirSecond mb-20">Les Comptoirs du Monde, Saint-Alban (31140)</p>
                         <p class="ta-justify">Développement d'une application SIRH pour gérer
@@ -382,7 +421,7 @@
 
     <!-- Compétences -->
     <div class="partie sectionBD green-gradient">
-        <h2>Base de données</h2>
+        <h2>Données</h2>
 
     </div>
 
@@ -399,7 +438,7 @@
         <h2>Langue Vivante</h2>
     </div>
 
-    <div id="transitionProjet" id="projets" onclick="animeGrid()">
+    <div id="transitionProjet" onclick="animeGrid()">
 
     </div>
 
@@ -426,7 +465,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 
-    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <!-- <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script> -->
 
     <script src="js/scriptGSAP.js"></script>
 

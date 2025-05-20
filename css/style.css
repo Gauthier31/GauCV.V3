@@ -1,6 +1,5 @@
 :root {
-    --noir: #1e2124;
-    --grisFonce: #343434;
+    --noir: #343434;
     --blanc: #ffffff;
 
     /* Photo */
@@ -8,17 +7,22 @@
     --widthVoyageur: 2327;
     --ratiowidthVoyageur: 2327 / 2930;
 
-    /* Neon */
-    --neonBleuClair: #a5d6ff;
-    --neonBleuFonce: #2f81f7;
-    --neonRose: #c597fd;
-    --neonViolet: #7450b6;
-    --neonVertClair: #7ee787;
-    --neonVertFonce: #427f52;
+    /* Font size */
+    --fontSize240: 240px;
+    --fontSize160: 160px;
+    --fontSize100: 100px;
+    --fontSize60: 60px;
+    --fontSize40: 40px;
+    --fontSize28: 28px;
+    --fontSize20: 20px;
+    --fontSize16: 16px;
+    --fontSize12: 12px;
+    --fontSize8: 8px;
+    --fontSize4: 4px;
 }
 
 *::selection {
-    background-color: var(--grisFonce);
+    background-color: var(--noir);
     color: var(--blanc);
 }
 
@@ -36,7 +40,7 @@
 }
 
 *::-webkit-scrollbar-track {
-    background-color: var(--grisFonce);
+    background-color: var(--noir);
 }
 
 *::-webkit-scrollbar-thumb {
@@ -48,21 +52,22 @@ body {
     font-family: Alliance;
     /* font-feature-settings: "ss04" on; */
     background-color: var(--blanc);
-    color: var(--grisFonce);
+    color: var(--noir);
+    overflow-x: hidden;
 }
 
 a {
-    color: var(--grisFonce);
+    color: var(--noir);
 
 }
 
 .surligne {
     color: var(--blanc);
-    background-color: var(--grisFonce)
+    background-color: var(--noir)
 }
 
 .surligne::selection {
-    color: var(--grisFonce);
+    color: var(--noir);
     background-color: var(--blanc)
 }
 
@@ -94,7 +99,7 @@ a {
 }
 
 .surligneAnim::before {
-    background-color: var(--grisFonce);
+    background-color: var(--noir);
 }
 
 .surligneAnim:hover::after {
@@ -110,28 +115,43 @@ a {
 
 /* ----------  ---------- */
 
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    padding-top: 1vh;
+    z-index: 100;
+}
+
 .fixHeader {
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
 
+nav,
+#alerte {
+    backdrop-filter: blur(2px);
+}
+
 nav {
-    position: fixed;
-    top: 0;
-    z-index: 100;
     height: 50px;
-    width: 100vw;
+    align-items: center;
+    width: min(80vw, 1000px);
     padding: 0 50px;
-    border-bottom: 1px solid var(--noir)
+    border: 1px solid var(--noir)
+}
+
+nav::before {
+    mix-blend-mode: difference;
 }
 
 #alerte {
     font-family: monospace;
     white-space: nowrap;
-    z-index: 100;
 
-    position: fixed;
-    top: 50px;
     animation: defilement-alerte 40s infinite linear;
 }
 
@@ -165,7 +185,7 @@ nav {
 .vertical-ligne {
     height: 25vh;
     width: 0px;
-    border-left: 1px solid var(--grisFonce);
+    border-left: 1px solid var(--noir);
     margin-top: 10px;
 }
 
@@ -174,7 +194,7 @@ nav {
     height: 4dvw;
     max-width: 50px;
     max-height: 50px;
-    border: 1px solid var(--grisFonce);
+    border: 1px solid var(--noir);
     border-radius: 50%;
     margin-top: 10px;
     transition: box-shadow 1s ease-in-out;
@@ -217,12 +237,41 @@ h1 {
     max-width: 1000px;
 }
 
+.circleHover {
+    position: relative;
+    overflow: hidden;
+    background: none;
+}
+
 .interet {
     font-size: 60px;
     padding: 5px 50px;
     border-radius: 100px;
-    border: 1px solid;
-    white-space: pre;
+    border: 1px solid var(--noir);
+    color: var(--noir);
+}
+
+.circleHover span {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+    transform: translate(-50%, -50%);
+}
+
+.interet:hover {
+    color: var(--blanc);
+}
+
+.interet:hover span {
+    width: 500px;
+    height: 500px;
+}
+
+.circleInteret {
+    background-color: var(--noir);
+    z-index: -1;
 }
 
 .interetDiv {
@@ -292,14 +341,14 @@ h1 {
 
 .terminalHead {
     background-color: var(--blanc);
-    color: var(--grisFonce);
+    color: var(--noir);
     padding: 10px 15px;
     width: 100%;
-    border: 1px solid var(--grisFonce);
+    border: 1px solid var(--noir);
 }
 
 #terminalBody {
-    background-color: var(--grisFonce);
+    background-color: var(--noir);
     font-family: monospace;
     color: var(--blanc);
     height: 50vh;
@@ -314,7 +363,7 @@ h1 {
 }
 
 .barreProg {
-    border: 1px solid var(--grisFonce);
+    border: 1px solid var(--noir);
     width: 100%;
     height: 5vh;
     border-radius: 8px;
@@ -325,7 +374,7 @@ h1 {
     height: 100%;
     width: 0%;
     border-radius: 3px;
-    background: var(--grisFonce);
+    background: var(--noir);
     transition: width 0.5s ease-in-out;
 }
 
@@ -355,7 +404,7 @@ h1 {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid var(--grisFonce);
+    border: 1px solid var(--noir);
     margin: 0 auto;
     background-color: var(--blanc);
 }
@@ -380,19 +429,23 @@ h1 {
 }
 
 .detail {
-    color: var(--grisFonce);
-    border: 1px solid var(--grisFonce);
+    color: var(--noir);
+    border: 1px solid var(--noir);
     background-color: var(--blanc);
 
-    position: relative;
     text-align: left;
     margin-bottom: 50px;
     padding: 15px 20px;
     transition: box-shadow .2s ease-in-out;
 }
 
-.detail:hover {
-    box-shadow: 4px 6px 8px rgb(0 0 0 / 40%);
+.circleDetail {
+    z-index: 0;
+}
+
+.detail:hover span {
+    width: 800px;
+    height: 800px;
 }
 
 .detail>* {
@@ -409,7 +462,7 @@ h1 {
 
 .lienDetailEnfant {
     height: 50px;
-    border: 1px dashed var(--grisFonce);
+    border: 1px dashed var(--noir);
 }
 
 .expTitre {
@@ -438,7 +491,7 @@ h1 {
 
 .date {
     margin-top: 10px;
-    border-bottom: 1px solid var(--grisFonce);
+    border-bottom: 1px solid var(--noir);
     width: fit-content;
 }
 
@@ -447,7 +500,7 @@ h1 {
 }
 
 .hrBlack {
-    border-left: 1px solid var(--grisFonce);
+    border-left: 1px solid var(--noir);
     height: calc(100% - 40px);
     width: 0;
     margin: 0 auto;
@@ -491,7 +544,7 @@ h1 {
     width: 100vw;
     line-height: 100vh;
     margin: auto;
-    border: 1px dashed var(--grisFonce);
+    border: 1px dashed var(--noir);
     text-align: center;
     vertical-align: middle;
     position: sticky;
@@ -506,7 +559,7 @@ h2 {
 .sectionWeb,
 .sectionDev,
 .sectionLangue {
-    height: 100vh;
+    height: 150vh;
     width: 100vw;
     position: sticky;
     top: 0px;
@@ -550,7 +603,7 @@ h2 {
 }
 
 .pixel {
-    border: 1px solid var(--grisFonce);
+    border: 1px solid var(--noir);
 }
 
 .pixelWhite {
@@ -558,7 +611,7 @@ h2 {
 }
 
 .pixelBlack {
-    background-color: var(--grisFonce);
+    background-color: var(--noir);
 }
 
 /* -------------- Footer -------------- */

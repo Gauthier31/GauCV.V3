@@ -144,27 +144,27 @@ document.querySelectorAll(".pixelTab div img").forEach(element => {
 ///////////////////////////////////////////////// Projets /////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// function createGrid() {
-//     console.log("createGrid")
-//     nbRowPixel = Math.floor(windowHeight / 50);
-//     nbColPixel = Math.floor(windowWidth / 50);
+function createGrid() {
+    console.log("createGrid")
+    nbRowPixel = Math.floor(windowHeight / 200);
+    nbColPixel = Math.floor(windowWidth / 200);
 
-//     heightPixel = windowHeight / nbRowPixel;
-//     widthPixel = windowWidth / nbColPixel;
+    heightPixel = windowHeight / nbRowPixel;
+    widthPixel = windowWidth / nbColPixel;
 
-//     console.log(nbRowPixel, heightPixel, nbColPixel, widthPixel)
+    console.log(nbRowPixel, heightPixel, nbColPixel, widthPixel)
 
-//     for (i = 0; i < nbRowPixel; i++) {
-//         for (j = 0; j < nbColPixel; j++) {
-//             document.getElementById("transitionProjet").innerHTML += `
-//                 <div class="pixel pixelWhite" style="width:${widthPixel}px;height:${heightPixel}px"></div>
-//                 `;
-//         }
-//     }
+    for (i = 0; i < nbRowPixel; i++) {
+        for (j = 0; j < nbColPixel; j++) {
+            document.getElementById("transitionProjet").innerHTML += `
+                <div class="pixel pixelWhite" style="width:${widthPixel}px;height:${heightPixel}px"></div>
+                `;
+        }
+    }
 
-//     console.log("end createGrid")
-// }
-// createGrid();
+    console.log("end createGrid")
+}
+createGrid();
 
 // function animeGrid() {
 
@@ -183,3 +183,68 @@ document.querySelectorAll(".pixelTab div img").forEach(element => {
 //         setTimeout(animeGrid, 1);
 //     }
 // }
+
+////////////////////////////////////////////////// Interet /////////////////////////////////////////////////
+
+const interet = document.querySelectorAll('.interet.circleHover');
+
+interet.forEach(div => {
+    div.addEventListener("mousemove", function (e) {
+        const rect = div.getBoundingClientRect();
+        const relX = e.clientX - rect.left;
+        const relY = e.clientY - rect.top;
+
+        const fill = div.querySelector(".circleInteret");
+        fill.style.top = relY + "px";
+        fill.style.left = relX + "px";
+    });
+});
+
+////////////////////////////////////////////////// Detail /////////////////////////////////////////////////
+
+const detail = document.querySelectorAll('.detail.circleHover');
+
+detail.forEach(div => {
+    div.addEventListener("mousemove", function (e) {
+        const rect = div.getBoundingClientRect();
+        const relX = e.clientX - rect.left;
+        const relY = e.clientY - rect.top;
+
+        const fill = div.querySelector(".circleDetail");
+        fill.style.top = relY + "px";
+        fill.style.left = relX + "px";
+    });
+});
+
+////////////////////////////////////////////////// Detail /////////////////////////////////////////////////
+
+function reveal() {
+
+    if (cardImg[0].getBoundingClientRect().left == 0) {
+
+        // Enleve
+        document.querySelector(".imgVoyageurDiv").classList.add("v-hidden");
+        document.querySelector(".acceuil").classList.add("v-hidden");
+
+        document.querySelector("header").classList.remove("fixHeader");
+        document.querySelector("#AnimInfoGauche").classList.remove("fixHeader");
+        document.querySelector("#AnimInfoDroite").classList.remove("fixHeader");
+
+        // Met
+        document.querySelector(".sectionTwo").classList.remove("v-hidden");
+        document.querySelector(".capteursectionTwo").classList.remove("d-none");
+    } else {
+
+        // Enleve
+        document.querySelector(".imgVoyageurDiv").classList.remove("v-hidden");
+        document.querySelector(".acceuil").classList.remove("v-hidden");
+
+        document.querySelector("header").classList.add("fixHeader");
+        document.querySelector("#AnimInfoGauche").classList.add("fixHeader");
+        document.querySelector("#AnimInfoDroite").classList.add("fixHeader");
+
+        // Met
+        document.querySelector(".sectionTwo").classList.add("v-hidden");
+        document.querySelector(".capteursectionTwo").classList.remove("d-none");
+    }
+}

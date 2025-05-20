@@ -69,9 +69,10 @@ document.querySelectorAll(".resume").forEach((elem) => {
     });
 });
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////// Aceuil /////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 cardImg.forEach(function () {
     gsap.fromTo(
@@ -114,6 +115,7 @@ cardImg.forEach(function () {
                 start: "top 100px",
                 end: "top -30%",
                 scrub: true,
+                ease: "power3.inOut"
                 //markers: true,
             }
         }
@@ -129,6 +131,8 @@ ScrollTrigger.create({
     pin: true,
     // markers: true,
 });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 var startAnimation = "top 40%";
 var endAnimation = "top 10%";
@@ -167,7 +171,7 @@ document.querySelectorAll(".capteursectionTwo").forEach(function () {
     );
 
     gsap.from(
-        "nav, #alerte",
+        "header",
         {
             y: -50,
             opacity: 0,
@@ -256,7 +260,7 @@ document.querySelectorAll(".galleryBackground").forEach((elem) => {
                 end: "bottom -1000px",
                 scrub: true,
                 pin: true,
-                markers: true
+                //markers: true
             }
         }
     );
@@ -306,7 +310,7 @@ document.querySelectorAll(".sectionBD").forEach((elem) => {
         {
             rotateZ: 30,
             xPercent: -50,
-            yPercent: 100,
+            yPercent: 25,
             scrollTrigger: {
                 id: "sectionBD",
                 trigger: elem,
@@ -314,7 +318,7 @@ document.querySelectorAll(".sectionBD").forEach((elem) => {
                 start: "top 100%",
                 end: "top 0%",
                 scrub: true,
-                //markers: true
+                markers: true
             }
         }
     );
@@ -326,7 +330,7 @@ document.querySelectorAll(".sectionWeb").forEach((elem) => {
         {
             rotateZ: -30,
             xPercent: 50,
-            yPercent: 100,
+            yPercent: 25,
             scrollTrigger: {
                 id: "sectionWeb",
                 trigger: elem,
@@ -346,9 +350,9 @@ document.querySelectorAll(".sectionDev").forEach((elem) => {
         {
             rotateZ: 30,
             xPercent: -50,
-            yPercent: 100,
+            yPercent: 25,
             scrollTrigger: {
-                id: "sectionBD",
+                id: "sectionDev",
                 trigger: elem,
                 toggleActions: "restart none none reverse",
                 start: "top 100%",
@@ -366,24 +370,44 @@ document.querySelectorAll(".sectionLangue").forEach((elem) => {
         {
             rotateZ: -30,
             xPercent: 50,
-            yPercent: 100,
+            yPercent: 25,
             scrollTrigger: {
-                id: "sectionBD",
+                id: "sectionLangue",
                 trigger: elem,
                 toggleActions: "restart none none reverse",
                 start: "top 100%",
                 end: "top 0%",
                 scrub: true,
-                //markers: true
+                markers: true
             }
         }
     );
 })
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////// Compétences ///////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+gsap.to("#transitionProjet .pixel", {
+    opacity: 1,
+    duration: 0.5,
+    stagger: { amount: 1, from: "random" },
+    scrollTrigger: {
+        trigger: "#transitionProjet",
+        start: "top 100%", // Start the animation when the top of #transitionProjet reaches 100% of the viewport height
+        end: "top 0%", // End the animation when the top of #transitionProjet reaches 0% of the viewport height
+        toggleActions: "restart none none reverse",
+        markers: true, // Optional: Add markers for debugging
+        onEnter: function () {
+            // Additional actions when the trigger is entered
+            console.log("Animation started");
+        }
+    }
+});
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 function reveal() {
 
@@ -393,8 +417,7 @@ function reveal() {
         document.querySelector(".imgVoyageurDiv").classList.add("v-hidden");
         document.querySelector(".acceuil").classList.add("v-hidden");
 
-        document.querySelector("nav").classList.remove("fixHeader");
-        document.querySelector("#alerte").classList.remove("fixHeader");
+        document.querySelector("header").classList.remove("fixHeader");
         document.querySelector("#AnimInfoGauche").classList.remove("fixHeader");
         document.querySelector("#AnimInfoDroite").classList.remove("fixHeader");
 
@@ -407,8 +430,7 @@ function reveal() {
         document.querySelector(".imgVoyageurDiv").classList.remove("v-hidden");
         document.querySelector(".acceuil").classList.remove("v-hidden");
 
-        document.querySelector("nav").classList.add("fixHeader");
-        document.querySelector("#alerte").classList.add("fixHeader");
+        document.querySelector("header").classList.add("fixHeader");
         document.querySelector("#AnimInfoGauche").classList.add("fixHeader");
         document.querySelector("#AnimInfoDroite").classList.add("fixHeader");
 
@@ -417,8 +439,6 @@ function reveal() {
         document.querySelector(".capteursectionTwo").classList.remove("d-none");
     }
 }
-
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
