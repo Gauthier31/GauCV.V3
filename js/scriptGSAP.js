@@ -308,7 +308,7 @@ document.querySelectorAll(".sectionBD").forEach((elem) => {
         elem,
         {
             rotateZ: 30,
-            xPercent: -50,
+            xPercent: -100,
             yPercent: 25,
             scrollTrigger: {
                 id: "sectionBD",
@@ -328,7 +328,7 @@ document.querySelectorAll(".sectionWeb").forEach((elem) => {
         elem,
         {
             rotateZ: -30,
-            xPercent: 50,
+            xPercent: 100,
             yPercent: 25,
             scrollTrigger: {
                 id: "sectionWeb",
@@ -348,7 +348,7 @@ document.querySelectorAll(".sectionDev").forEach((elem) => {
         elem,
         {
             rotateZ: 30,
-            xPercent: -50,
+            xPercent: -100,
             yPercent: 25,
             scrollTrigger: {
                 id: "sectionDev",
@@ -368,7 +368,7 @@ document.querySelectorAll(".sectionLangue").forEach((elem) => {
         elem,
         {
             rotateZ: -30,
-            xPercent: 50,
+            xPercent: 100,
             yPercent: 25,
             scrollTrigger: {
                 id: "sectionLangue",
@@ -388,18 +388,16 @@ document.querySelectorAll(".sectionLangue").forEach((elem) => {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 function createGrid() {
     console.log("createGrid")
-    nbRowPixel = Math.floor(windowHeight / 100);
-    nbColPixel = Math.floor(windowWidth / 100);
 
-    heightPixel = windowHeight / nbRowPixel;
-    widthPixel = windowWidth / nbColPixel;
+    heightVH = 10;
+    widthVW = 9.9;
 
-    console.log(nbRowPixel, heightPixel, nbColPixel, widthPixel)
+    console.log(heightVH, widthVW)
 
-    for (var i = 0; i < nbRowPixel; i++) {
-        for (var j = 0; j < nbColPixel; j++) {
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
             document.getElementById("transitionProjet").innerHTML += `
-                <div class="pixel pixelWhite" style="width:${widthPixel - 1}px;height:${heightPixel}px"></div>
+                <div class="pixel" style="width:${widthVW}vw;height:${heightVH}vh"></div>
                 `;
         }
     }
