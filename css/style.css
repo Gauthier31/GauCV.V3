@@ -209,6 +209,39 @@ nav::before {
     padding-top: 15vh;
 }
 
+/* ----- Blanc ----- */
+
+.blanc nav {
+    border-bottom: 1px solid var(--blanc) !important;
+}
+
+.blanc .vertical-ligne {
+    border-left: 1px solid var(--blanc) !important;
+}
+
+.blanc .reseau {
+    border: 1px solid var(--blanc) !important;
+}
+
+.blanc,
+.blanc nav,
+.blanc a,
+.blanc .reseau {
+    color: var(--blanc) !important;
+}
+
+body.blanc::-webkit-scrollbar {
+    background-color: var(--blanc);
+}
+
+body.blanc::-webkit-scrollbar-track {
+    background-color: var(--blanc);
+}
+
+body.blanc::-webkit-scrollbar-thumb {
+    background-color: var(--noir);
+    border: 1px solid var(--blanc);
+}
 
 /* ---------- Acceuil ---------- */
 .acceuil {

@@ -434,6 +434,65 @@ ScrollTrigger.create({
     end: "top -100%",
     pin: true,
 });
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var startAnimation2 = "top -50%";
+var endAnimation2 = "top -80%";
+
+document.querySelectorAll(".transitionProjetBloc").forEach(function () {
+    gsap.from(
+        "#AnimInfoGauche, #AnimInfoDroite",
+        {
+            y: 200,
+            opacity: 0,
+            scrollTrigger: {
+                id: "cardImgSecond",
+                trigger: ".transitionProjetBloc",
+                toggleActions: "restart none none reverse",
+                start: startAnimation2,
+                end: endAnimation2,
+                scrub: true,
+                // markers: true
+            }
+        }
+    );
+
+    gsap.from(
+        "header",
+        {
+            y: -50,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: ".transitionProjetBloc",
+                toggleActions: "play none none reverse",
+                toggleActions: "restart none none reverse",
+                start: startAnimation2,
+                end: endAnimation2,
+                scrub: true,
+                // markers: true
+            }
+        }
+    );
+})
+
+document.querySelectorAll(".projet").forEach(function () {
+    gsap.from(
+        ".projet",
+        {
+            scrollTrigger: {
+                id: "projet",
+                trigger: ".projet",
+                toggleActions: "restart none none reverse",
+                start: "top 20%",
+                end: "top -30%",
+                scrub: true,
+                //markers: true
+            }
+        }
+    );
+})
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -468,14 +527,18 @@ function reveal() {
         document.querySelector(".capteurFormations").classList.remove("d-none");
     }
 
+
+
     if (document.querySelector("#transitionProjetBloc").getBoundingClientRect().top > windowHeight * -0.5) {
 
         document.querySelector("#transitionProjet").classList.remove("d-none");
         document.querySelector("#sectionProjets").classList.add("v-hidden");
+        document.querySelector("body").classList.remove("blanc");
     } else {
 
         document.querySelector("#transitionProjet").classList.add("d-none");
         document.querySelector("#sectionProjets").classList.remove("v-hidden");
+        document.querySelector("body").classList.add("blanc");
     }
 }
 
