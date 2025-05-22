@@ -16,7 +16,7 @@ let PROJET = [
         "titre": 'Application Web',
         "texte": `
         <br/>
-        Sopra Steria, plus particulièrement le département TME(Télécommunications, Multimédias et Divertissement), accompagne Orange, et leur département DSI réseaux, dans de nombreux domaines et notamment dans la gestion des métiers de l'intervention sur le PROJET MOBI.<br/>
+        Sopra Steria, plus particulièrement le département TME(Télécommunications, Multimédias et Blocertissement), accompagne Orange, et leur département DSI réseaux, dans de nombreux domaines et notamment dans la gestion des métiers de l'intervention sur le PROJET MOBI.<br/>
         MOBI est une application très récente, conçue début 2017, qui permet aux techniciens de traiter en autonomie les interventions qui sont affectées dans leur Plan de Charge.<br/>
         Cette application sert de boîte à outils aux techniciens, elle permet entre autres de : faire le planning des ordres de travaux, les aider lors d'intervention concernant la mutation de ligne de cuivre à fibre (qui concerne 38 millions de foyers) et de faire des essais de ligne.
         <br/><br/>

@@ -122,7 +122,6 @@ header {
     align-items: center;
     position: fixed;
     top: 0;
-    padding-top: 1vh;
     z-index: 100;
 }
 
@@ -139,9 +138,9 @@ nav,
 nav {
     height: 50px;
     align-items: center;
-    width: min(80vw, 1000px);
+    width: 100%;
     padding: 0 50px;
-    border: 1px solid var(--noir)
+    border-bottom: 1px solid var(--noir)
 }
 
 nav::before {
@@ -237,18 +236,27 @@ h1 {
     max-width: 1000px;
 }
 
-.circleHover {
-    position: relative;
-    overflow: hidden;
-    background: none;
-}
-
 .interet {
     font-size: 60px;
     padding: 5px 50px;
     border-radius: 100px;
     border: 1px solid var(--noir);
     color: var(--noir);
+}
+
+.interet:hover {
+    color: var(--blanc);
+}
+
+.interet:hover span {
+    width: 800px;
+    height: 800px;
+}
+
+.circleHover {
+    position: relative;
+    overflow: hidden;
+    background: none;
 }
 
 .circleHover span {
@@ -260,21 +268,12 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
-.interet:hover {
-    color: var(--blanc);
-}
-
-.interet:hover span {
-    width: 500px;
-    height: 500px;
-}
-
 .circleInteret {
     background-color: var(--noir);
     z-index: -1;
 }
 
-.interetDiv {
+.interetBloc {
     width: max-content;
     animation: defilement-interet 60s infinite linear;
 }
@@ -290,7 +289,7 @@ h1 {
 }
 
 /* ----- Tableau ----- */
-.imgVoyageurDiv {
+.imgVoyageurBloc {
     perspective: 10000px;
     z-index: 200;
 }
@@ -300,7 +299,7 @@ h1 {
     transform-style: preserve-3d;
     border: 1px solid var(--noir);
     box-shadow: 8px 12px 16px rgba(0, 0, 0, 0.4);
-    height: calc(75vh * var(--heightVoyageur) / var(--heightVoyageur));
+    height: 75vh;
     width: calc(75vh * var(--widthVoyageur) / var(--heightVoyageur));
 }
 
@@ -325,8 +324,7 @@ h1 {
 }
 
 /* ---------- Formation ---------- */
-.sectionTwo {
-    width: 100vw;
+#formations {
     margin-top: 50vh;
 }
 
@@ -444,11 +442,12 @@ h1 {
 }
 
 .detail:hover span {
-    width: 800px;
-    height: 800px;
+    width: 1000px;
+    height: 1000px;
 }
 
 .detail>* {
+    position: relative;
     margin: 0;
     padding: 0;
 }
@@ -556,16 +555,26 @@ h2 {
 }
 
 .competenceBody {
-    height: 150vh;
     width: 100vw;
+}
+
+.sectionBDBloc,
+.sectionWebBloc,
+.sectionDevBloc,
+.sectionLangueBloc {
+    margin-top: -100vh;
 }
 
 .sectionBD,
 .sectionWeb,
-.sectionDev,
-.sectionLangue {
-    position: sticky;
-    top: 0px;
+.sectionDev {
+    padding-bottom: 100vh;
+    height: auto;
+}
+
+.remplissage {
+    height: 100vh;
+    /* border: 1px solid var(--noir); */
 }
 
 .sectionLangue {
@@ -595,7 +604,12 @@ h2 {
 
 /* -------------- Projet -------------- */
 
+#transitionProjetBloc {
+    margin-top: -50vh;
+}
+
 #transitionProjet {
+    position: absolute;
     height: 100vh;
     width: 100vw;
 
@@ -611,9 +625,28 @@ h2 {
     visibility: visible;
 }
 
-.remplissage {
-    height: 100vh;
+#sectionProjets {
+    min-height: 200vh;
     width: 100vw;
+    background-color: var(--noir);
+    color: var(--blanc);
+    padding-top: 80vh;
+    z-index: 1;
+}
+
+.projet {
+    border: 1px solid var(--blanc);
+    width: 80%;
+}
+
+.projectName {
+    font-size: 60px;
+    font-weight: bold;
+    padding: 5%;
+}
+
+.projectResume {
+    padding: 0 5% 5% 5%;
 }
 
 /* -------------- Footer -------------- */

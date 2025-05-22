@@ -8,6 +8,7 @@ window.addEventListener("scroll", reveal);
 
 var windowHeight = window.innerHeight;
 var windowWidth = window.innerWidth;
+console.log(windowHeight, windowWidth)
 
 var ratioScreen = windowWidth / windowHeight;
 
@@ -26,7 +27,7 @@ var heightChoose = false;
 const navBar = document.querySelector("nav");
 var cardImg = document.querySelectorAll(".cardImg");
 var cardImgCursor = 0;
-var sectionTwo = document.querySelectorAll(".sectionTwo");
+var formations = document.querySelectorAll("#formations");
 
 var AnimInfoGauche = document.querySelector("#AnimInfoGauche");
 var AnimInfoDroite = document.querySelector("#AnimInfoDroite");
@@ -106,16 +107,16 @@ cardImg.forEach(function () {
         {
             rotateY: 180,
             rotateZ: -90,
-            y: ajustementCard,
+            y: ajustementCard - windowHeight * 0.125,
             height: windowWidth,
             width: windowHeight,
             scrollTrigger: {
                 id: "cardImgSecond",
                 trigger: ".cardImg",
-                start: "top 100px",
+                start: "top 12.5%",
                 end: "top -30%",
                 scrub: true,
-                ease: "power3.inOut"
+                ease: "power3.inOut",
                 //markers: true,
             }
         }
@@ -124,8 +125,8 @@ cardImg.forEach(function () {
 
 ScrollTrigger.create({
     id: "sticky",
-    trigger: ".imgVoyageurDiv",
-    start: "top 0px",
+    trigger: ".imgVoyageurBloc",
+    start: "top 12.5%",
     endTrigger: ".cardImg",
     end: "top -30%",
     pin: true,
@@ -136,7 +137,7 @@ ScrollTrigger.create({
 var startAnimation = "top 40%";
 var endAnimation = "top 10%";
 
-document.querySelectorAll(".capteursectionTwo").forEach(function () {
+document.querySelectorAll(".capteurFormations").forEach(function () {
     gsap.from(
         "#AnimInfoGauche, #AnimInfoDroite",
         {
@@ -144,7 +145,7 @@ document.querySelectorAll(".capteursectionTwo").forEach(function () {
             opacity: 0,
             scrollTrigger: {
                 id: "cardImgSecond",
-                trigger: ".capteursectionTwo",
+                trigger: ".capteurFormations",
                 toggleActions: "restart none none reverse",
                 start: startAnimation,
                 end: endAnimation,
@@ -159,7 +160,7 @@ document.querySelectorAll(".capteursectionTwo").forEach(function () {
         {
             opacity: 0,
             scrollTrigger: {
-                trigger: ".capteursectionTwo",
+                trigger: ".capteurFormations",
                 toggleActions: "restart none none reverse",
                 start: startAnimation,
                 end: endAnimation,
@@ -175,7 +176,7 @@ document.querySelectorAll(".capteursectionTwo").forEach(function () {
             y: -50,
             opacity: 0,
             scrollTrigger: {
-                trigger: ".capteursectionTwo",
+                trigger: ".capteurFormations",
                 toggleActions: "play none none reverse",
                 toggleActions: "restart none none reverse",
                 start: startAnimation,
@@ -211,18 +212,24 @@ document.querySelectorAll(".terminalBloc").forEach(function () {
 
 let isWindowAbove1200 = window.innerWidth > 1200;
 
-document.querySelectorAll(".expProDetail").forEach((detail, index) => {
-    gsap.from(detail, {
-        scrollTrigger: {
-            trigger: detail,
-            start: "top 70%",
-            end: "bottom 25%",
-            toggleActions: "play reverse play reverse",
-            // markers: true
-        },
-        x: (index % 2 === 1 && isWindowAbove1200) ? -300 : 300,
-        opacity: 0,
-        duration: 0.7,
+document.querySelectorAll(".expProDetail").forEach((expBlock, blockIndex) => {
+    const details = expBlock.querySelectorAll(".detailAnim");
+
+    details.forEach((detail) => {
+        gsap.from(detail, {
+            scrollTrigger: {
+                trigger: detail,
+                start: "top 70%",
+                end: "bottom 25%",
+                toggleActions: "play none none reverse",
+                // markers: true
+            },
+            x: isWindowAbove1200
+                ? (blockIndex % 2 === 0 ? 300 : -300)
+                : 0,
+            opacity: 0,
+            duration: 0.7,
+        });
     });
 });
 
@@ -246,56 +253,56 @@ document.querySelectorAll(".exProligne").forEach((exProligne) => {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-document.querySelectorAll(".galleryBackground").forEach((elem) => {
-    gsap.to(
-        elem,
-        {
-            y: -1000,
-            scrollTrigger: {
-                id: "galleryBackground",
-                trigger: elem,
-                toggleActions: "restart none none reverse",
-                start: "top 80%",
-                end: "bottom -1000px",
-                scrub: true,
-                pin: true,
-                //markers: true
-            }
-        }
-    );
-})
+// document.querySelectorAll(".galleryBackground").forEach((elem) => {
+//     gsap.to(
+//         elem,
+//         {
+//             y: -1000,
+//             scrollTrigger: {
+//                 id: "galleryBackground",
+//                 trigger: elem,
+//                 toggleActions: "restart none none reverse",
+//                 start: "top 80%",
+//                 end: "bottom -1000px",
+//                 scrub: true,
+//                 pin: true,
+//                 //markers: true
+//             }
+//         }
+//     );
+// })
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const st = SplitText.create("p", { type: "chars", charsClass: "char" });
+// const st = SplitText.create("p", { type: "chars", charsClass: "char" });
 
-st.chars.forEach((char) => {
-    gsap.set(char, { attr: { "data-content": char.innerHTML } });
-});
+// st.chars.forEach((char) => {
+//     gsap.set(char, { attr: { "data-content": char.innerHTML } });
+// });
 
-const textBlock = document.querySelector(".scrabledWord");
+// const textBlock = document.querySelector(".scrabledWord");
 
-textBlock.onpointermove = (e) => {
-    st.chars.forEach((char) => {
-        const rect = char.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-        const dx = e.clientX - cx;
-        const dy = e.clientY - cy;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 50)
-            gsap.to(char, {
-                overwrite: true,
-                duration: 1.2 - dist / 100,
-                scrambleText: {
-                    text: char.dataset.content,
-                    chars: "",
-                    speed: 2,
-                },
-                ease: 'none'
-            });
-    });
-};
+// textBlock.onpointermove = (e) => {
+//     st.chars.forEach((char) => {
+//         const rect = char.getBoundingClientRect();
+//         const cx = rect.left + rect.width / 2;
+//         const cy = rect.top + rect.height / 2;
+//         const dx = e.clientX - cx;
+//         const dy = e.clientY - cy;
+//         const dist = Math.sqrt(dx * dx + dy * dy);
+//         if (dist < 50)
+//             gsap.to(char, {
+//                 overwrite: true,
+//                 duration: 1.2 - dist / 100,
+//                 scrambleText: {
+//                     text: char.dataset.content,
+//                     chars: "",
+//                     speed: 2,
+//                 },
+//                 ease: 'none'
+//             });
+//     });
+// };
 
 
 
@@ -309,7 +316,7 @@ document.querySelectorAll(".sectionBD").forEach((elem) => {
         {
             rotateZ: 30,
             xPercent: -100,
-            yPercent: 25,
+            yPercent: 10,
             scrollTrigger: {
                 id: "sectionBD",
                 trigger: elem,
@@ -329,7 +336,7 @@ document.querySelectorAll(".sectionWeb").forEach((elem) => {
         {
             rotateZ: -30,
             xPercent: 100,
-            yPercent: 25,
+            yPercent: 10,
             scrollTrigger: {
                 id: "sectionWeb",
                 trigger: elem,
@@ -349,7 +356,7 @@ document.querySelectorAll(".sectionDev").forEach((elem) => {
         {
             rotateZ: 30,
             xPercent: -100,
-            yPercent: 25,
+            yPercent: 10,
             scrollTrigger: {
                 id: "sectionDev",
                 trigger: elem,
@@ -363,13 +370,14 @@ document.querySelectorAll(".sectionDev").forEach((elem) => {
     );
 })
 
+
 document.querySelectorAll(".sectionLangue").forEach((elem) => {
     gsap.from(
         elem,
         {
             rotateZ: -30,
             xPercent: 100,
-            yPercent: 25,
+            yPercent: 10,
             scrollTrigger: {
                 id: "sectionLangue",
                 trigger: elem,
@@ -384,7 +392,7 @@ document.querySelectorAll(".sectionLangue").forEach((elem) => {
 })
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////// Compétences ///////////////////////////////////////////////
+/////////////////////////////////////////////// Projets ///////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 function createGrid() {
     console.log("createGrid")
@@ -412,7 +420,7 @@ gsap.from("#transitionProjet .pixel", {
     stagger: { amount: 1, from: "random" },
     scrollTrigger: {
         trigger: "#transitionProjet",
-        start: "top 0%",
+        start: "top 15%",
         end: "top -30%",
         scrub: true,
         markers: true,
@@ -435,7 +443,7 @@ function reveal() {
     if (cardImg[0].getBoundingClientRect().left == 0) {
 
         // Enleve
-        document.querySelector(".imgVoyageurDiv").classList.add("v-hidden");
+        document.querySelector(".imgVoyageurBloc").classList.add("v-hidden");
         document.querySelector(".acceuil").classList.add("v-hidden");
 
         document.querySelector("header").classList.remove("fixHeader");
@@ -443,12 +451,12 @@ function reveal() {
         document.querySelector("#AnimInfoDroite").classList.remove("fixHeader");
 
         // Met
-        document.querySelector(".sectionTwo").classList.remove("v-hidden");
-        document.querySelector(".capteursectionTwo").classList.remove("d-none");
+        document.querySelector("#formations").classList.remove("v-hidden");
+        document.querySelector(".capteurFormations").classList.remove("d-none");
     } else {
 
         // Enleve
-        document.querySelector(".imgVoyageurDiv").classList.remove("v-hidden");
+        document.querySelector(".imgVoyageurBloc").classList.remove("v-hidden");
         document.querySelector(".acceuil").classList.remove("v-hidden");
 
         document.querySelector("header").classList.add("fixHeader");
@@ -456,8 +464,18 @@ function reveal() {
         document.querySelector("#AnimInfoDroite").classList.add("fixHeader");
 
         // Met
-        document.querySelector(".sectionTwo").classList.add("v-hidden");
-        document.querySelector(".capteursectionTwo").classList.remove("d-none");
+        document.querySelector("#formations").classList.add("v-hidden");
+        document.querySelector(".capteurFormations").classList.remove("d-none");
+    }
+
+    if (document.querySelector("#transitionProjetBloc").getBoundingClientRect().top > windowHeight * -0.5) {
+
+        document.querySelector("#transitionProjet").classList.remove("d-none");
+        document.querySelector("#sectionProjets").classList.add("v-hidden");
+    } else {
+
+        document.querySelector("#transitionProjet").classList.add("d-none");
+        document.querySelector("#sectionProjets").classList.remove("v-hidden");
     }
 }
 
