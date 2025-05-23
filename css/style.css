@@ -1,5 +1,6 @@
 :root {
     --noir: #343434;
+    --noir2: #1C1C1C;
     --blanc: #ffffff;
 
     /* Photo */
@@ -638,7 +639,7 @@ h2 {
 /* -------------- Projet -------------- */
 
 #transitionProjetBloc {
-    margin-top: -50vh;
+    margin-top: -75vh;
 }
 
 #transitionProjet {
@@ -663,23 +664,54 @@ h2 {
     width: 100vw;
     background-color: var(--noir);
     color: var(--blanc);
-    padding-top: 80vh;
+    padding-top: 130vh;
+    padding-bottom: 50vh;
     z-index: 1;
 }
 
 .projet {
     border: 1px solid var(--blanc);
-    width: 80%;
+    padding: 4%;
+    width: 75vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.projectName,
+.projectResume {
+    position: relative;
+    z-index: 1;
 }
 
 .projectName {
     font-size: 60px;
     font-weight: bold;
-    padding: 5%;
 }
 
 .projectResume {
-    padding: 0 5% 5% 5%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding-top: 0;
+    padding-right: 30vw;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding-top 0.3s ease;
+}
+
+.projectResume.open {
+    max-height: 500px;
+    opacity: 1;
+    padding-top: 4%;
+}
+
+.projectImg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 30vw;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
 }
 
 /* -------------- Footer -------------- */

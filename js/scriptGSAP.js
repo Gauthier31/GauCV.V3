@@ -177,7 +177,6 @@ document.querySelectorAll(".capteurFormations").forEach(function () {
             opacity: 0,
             scrollTrigger: {
                 trigger: ".capteurFormations",
-                toggleActions: "play none none reverse",
                 toggleActions: "restart none none reverse",
                 start: startAnimation,
                 end: endAnimation,
@@ -219,16 +218,16 @@ document.querySelectorAll(".expProDetail").forEach((expBlock, blockIndex) => {
         gsap.from(detail, {
             scrollTrigger: {
                 trigger: detail,
-                start: "top 70%",
-                end: "bottom 25%",
+                start: "top 100%",
+                end: "top 50%",
                 toggleActions: "play none none reverse",
+                scrub: true
                 // markers: true
             },
             x: isWindowAbove1200
                 ? (blockIndex % 2 === 0 ? 300 : -300)
                 : 0,
             opacity: 0,
-            duration: 0.7,
         });
     });
 });
@@ -316,7 +315,7 @@ document.querySelectorAll(".sectionBD").forEach((elem) => {
         {
             rotateZ: 30,
             xPercent: -100,
-            yPercent: 10,
+            yPercent: 13,
             scrollTrigger: {
                 id: "sectionBD",
                 trigger: elem,
@@ -336,15 +335,14 @@ document.querySelectorAll(".sectionWeb").forEach((elem) => {
         {
             rotateZ: -30,
             xPercent: 100,
-            yPercent: 10,
             scrollTrigger: {
                 id: "sectionWeb",
                 trigger: elem,
                 toggleActions: "restart none none reverse",
                 start: "top 100%",
-                end: "top 0%",
+                end: "top -33%",
                 scrub: true,
-                //markers: true
+                markers: true
             }
         }
     );
@@ -356,13 +354,12 @@ document.querySelectorAll(".sectionDev").forEach((elem) => {
         {
             rotateZ: 30,
             xPercent: -100,
-            yPercent: 10,
             scrollTrigger: {
                 id: "sectionDev",
                 trigger: elem,
                 toggleActions: "restart none none reverse",
                 start: "top 100%",
-                end: "top 0%",
+                end: "top -33%",
                 scrub: true,
                 //markers: true
             }
@@ -377,13 +374,12 @@ document.querySelectorAll(".sectionLangue").forEach((elem) => {
         {
             rotateZ: -30,
             xPercent: 100,
-            yPercent: 10,
             scrollTrigger: {
                 id: "sectionLangue",
                 trigger: elem,
                 toggleActions: "restart none none reverse",
                 start: "top 100%",
-                end: "top 0%",
+                end: "top -33%",
                 scrub: true,
                 //markers: true
             }
@@ -423,7 +419,7 @@ gsap.from("#transitionProjet .pixel", {
         start: "top 15%",
         end: "top -30%",
         scrub: true,
-        markers: true,
+        //markers: true,
     }
 });
 
@@ -448,7 +444,7 @@ document.querySelectorAll(".transitionProjetBloc").forEach(function () {
             y: 200,
             opacity: 0,
             scrollTrigger: {
-                id: "cardImgSecond",
+                id: "transitionProjetBloc",
                 trigger: ".transitionProjetBloc",
                 toggleActions: "restart none none reverse",
                 start: startAnimation2,
@@ -466,7 +462,6 @@ document.querySelectorAll(".transitionProjetBloc").forEach(function () {
             opacity: 0,
             scrollTrigger: {
                 trigger: ".transitionProjetBloc",
-                toggleActions: "play none none reverse",
                 toggleActions: "restart none none reverse",
                 start: startAnimation2,
                 end: endAnimation2,
@@ -477,22 +472,92 @@ document.querySelectorAll(".transitionProjetBloc").forEach(function () {
     );
 })
 
-document.querySelectorAll(".projet").forEach(function () {
-    gsap.from(
-        ".projet",
-        {
-            scrollTrigger: {
-                id: "projet",
-                trigger: ".projet",
-                toggleActions: "restart none none reverse",
-                start: "top 20%",
-                end: "top -30%",
-                scrub: true,
-                //markers: true
-            }
+document.querySelectorAll(".projet").forEach((elem) => {
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: elem,
+            start: "top 100%",
+            end: "top 0%",
+            scrub: true,
+            markers: true,
         }
-    );
+    });
+
+    tl.fromTo(
+        elem,
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1 }
+    )
+        .to(
+            elem,
+            { y: 0, opacity: 1 }
+        )
+        .to(
+            elem,
+            { y: -100, opacity: 0 }
+        );
 })
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// // Ensure GSAP is loaded
+// document.querySelectorAll(".projet").forEach((projet) => {
+//     const name = projet.querySelector(".projectName");
+//     const resume = projet.querySelector(".projectResume");
+
+//     // Set initial state
+//     gsap.set(resume, {
+//         height: 0,
+//         opacity: 0,
+//         overflow: "hidden"
+//     });
+
+//     let isAnimating = false;
+
+//     // Hover in — expand accordion
+//     name.addEventListener("mouseenter", () => {
+//         if (isAnimating) return;
+//         isAnimating = true;
+
+//         gsap.to(resume, {
+//             height: "auto",
+//             opacity: 1,
+//             duration: 0.3,
+//             ease: "power2.out",
+//             onComplete: () => isAnimating = false
+//         });
+//     });
+
+//     // Hover out — collapse accordion
+//     name.addEventListener("mouseleave", () => {
+//         if (isAnimating) return;
+//         isAnimating = true;
+
+//         gsap.to(resume, {
+//             height: 0,
+//             opacity: 0,
+//             duration: 0.3,
+//             ease: "power2.in",
+//             onComplete: () => isAnimating = false
+//         });
+//     });
+// });
+
+document.querySelectorAll(".projet").forEach((projet) => {
+    const name = projet.querySelector(".projectName");
+    const resume = projet.querySelector(".projectResume");
+
+    projet.addEventListener("mouseenter", () => {
+        resume.classList.add("open");
+    });
+
+    projet.addEventListener("mouseleave", () => {
+        resume.classList.remove("open");
+    });
+});
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -534,11 +599,13 @@ function reveal() {
         document.querySelector("#transitionProjet").classList.remove("d-none");
         document.querySelector("#sectionProjets").classList.add("v-hidden");
         document.querySelector("body").classList.remove("blanc");
+        document.querySelector("#transitionProjetBloc").style.zIndex = 200;
     } else {
 
         document.querySelector("#transitionProjet").classList.add("d-none");
         document.querySelector("#sectionProjets").classList.remove("v-hidden");
         document.querySelector("body").classList.add("blanc");
+        document.querySelector("#transitionProjetBloc").style.zIndex = 0;
     }
 }
 
