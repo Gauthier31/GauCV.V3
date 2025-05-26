@@ -310,61 +310,90 @@ document.querySelectorAll(".exProligne").forEach((exProligne) => {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 document.querySelectorAll(".sectionBD").forEach((elem) => {
+
     gsap.from(
         elem,
         {
-            rotateZ: 30,
-            xPercent: -100,
-            yPercent: 13,
+            x: windowWidth,
             scrollTrigger: {
                 id: "sectionBD",
                 trigger: elem,
                 toggleActions: "restart none none reverse",
-                start: "top 100%",
-                end: "top 0%",
+                start: "top 0%",
+                end: "top -100%",
                 scrub: true,
-                //markers: true
+                pin: true,
+                //markers: true,
             }
         }
     );
+
+    ScrollTrigger.create({
+        id: "sticky",
+        trigger: elem,
+        start: "bottom 100%",
+        end: "bottom 0%",
+        pin: true,
+        //marker: true
+    });
 })
+
+
 
 document.querySelectorAll(".sectionWeb").forEach((elem) => {
     gsap.from(
         elem,
         {
-            rotateZ: -30,
-            xPercent: 100,
+            x: windowWidth,
             scrollTrigger: {
                 id: "sectionWeb",
                 trigger: elem,
                 toggleActions: "restart none none reverse",
-                start: "top 100%",
-                end: "top -33%",
+                start: "top 0%",
+                end: "top -100%",
                 scrub: true,
-                markers: true
+                pin: true,
+                //markers: true,
             }
         }
     );
+
+    ScrollTrigger.create({
+        id: "sticky",
+        trigger: elem,
+        start: "bottom 100%",
+        end: "bottom 0%",
+        pin: true,
+        //marker: true
+    });
 })
 
 document.querySelectorAll(".sectionDev").forEach((elem) => {
     gsap.from(
         elem,
         {
-            rotateZ: 30,
-            xPercent: -100,
+            x: windowWidth,
             scrollTrigger: {
                 id: "sectionDev",
                 trigger: elem,
                 toggleActions: "restart none none reverse",
-                start: "top 100%",
-                end: "top -33%",
+                start: "top 0%",
+                end: "top -100%",
                 scrub: true,
-                //markers: true
+                pin: true,
+                //markers: true,
             }
         }
     );
+
+    ScrollTrigger.create({
+        id: "sticky",
+        trigger: elem,
+        start: "bottom 100%",
+        end: "bottom 0%",
+        pin: true,
+        //marker: true
+    });
 })
 
 
@@ -372,19 +401,28 @@ document.querySelectorAll(".sectionLangue").forEach((elem) => {
     gsap.from(
         elem,
         {
-            rotateZ: -30,
-            xPercent: 100,
+            x: windowWidth,
             scrollTrigger: {
                 id: "sectionLangue",
                 trigger: elem,
                 toggleActions: "restart none none reverse",
-                start: "top 100%",
-                end: "top -33%",
+                start: "top 0%",
+                end: "top -100%",
                 scrub: true,
-                //markers: true
+                pin: true,
+                //markers: true,
             }
         }
     );
+
+    ScrollTrigger.create({
+        id: "sticky",
+        trigger: elem,
+        start: "bottom 100%",
+        end: "bottom 0%",
+        pin: true,
+        //marker: true
+    });
 })
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -477,10 +515,10 @@ document.querySelectorAll(".projet").forEach((elem) => {
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: elem,
-            start: "top 100%",
-            end: "top 0%",
+            start: "top 105%",
+            end: "top -5%",
             scrub: true,
-            markers: true,
+            // markers: true,
         }
     });
 

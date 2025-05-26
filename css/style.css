@@ -592,23 +592,23 @@ h2 {
     width: 100vw;
 }
 
-.sectionBDBloc,
+
 .sectionWebBloc,
 .sectionDevBloc,
 .sectionLangueBloc {
-    margin-top: -100vh;
+    margin-top: -200vh;
 }
 
 .sectionBD,
 .sectionWeb,
 .sectionDev {
-    padding-bottom: 100vh;
-    height: auto;
+    padding-bottom: 50vh;
+    transform: translate3d(0, 0, 0);
 }
 
 .remplissage {
     height: 100vh;
-    /* border: 1px solid var(--noir); */
+    border: 1px solid var(--noir);
 }
 
 .sectionLangue {
@@ -639,7 +639,7 @@ h2 {
 /* -------------- Projet -------------- */
 
 #transitionProjetBloc {
-    margin-top: -75vh;
+    margin-top: -60vh;
 }
 
 #transitionProjet {
