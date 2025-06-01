@@ -192,7 +192,7 @@ function reveal() {
 
         // Met
         document.querySelector("#formations").classList.remove("v-hidden");
-        document.querySelector(".capteurFormations").classList.remove("d-none");
+        document.querySelector("#capteurFormations").classList.remove("d-none");
     } else {
 
         // Enleve
@@ -205,6 +205,6 @@ function reveal() {
 
         // Met
         document.querySelector("#formations").classList.add("v-hidden");
-        document.querySelector(".capteurFormations").classList.remove("d-none");
+        document.querySelector("#capteurFormations").classList.remove("d-none");
     }
 }

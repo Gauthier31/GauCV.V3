@@ -114,7 +114,7 @@ cardImg.forEach(function () {
                 id: "cardImgSecond",
                 trigger: ".cardImg",
                 start: "top 12.5%",
-                end: "top -30%",
+                end: "top -100%",
                 scrub: true,
                 ease: "power3.inOut",
                 //markers: true,
@@ -128,7 +128,7 @@ ScrollTrigger.create({
     trigger: ".imgVoyageurBloc",
     start: "top 12.5%",
     endTrigger: ".cardImg",
-    end: "top -30%",
+    end: "top -100%",
     pin: true,
 });
 
@@ -137,20 +137,20 @@ ScrollTrigger.create({
 var startAnimation = "top 40%";
 var endAnimation = "top 10%";
 
-document.querySelectorAll(".capteurFormations").forEach(function () {
+document.querySelectorAll("#capteurFormations").forEach((elem) => {
+
     gsap.from(
         "#AnimInfoGauche, #AnimInfoDroite",
         {
             y: 200,
             opacity: 0,
             scrollTrigger: {
-                id: "cardImgSecond",
-                trigger: ".capteurFormations",
+                trigger: elem,
                 toggleActions: "restart none none reverse",
                 start: startAnimation,
                 end: endAnimation,
                 scrub: true,
-                // markers: true
+                //markers: true
             }
         }
     );
@@ -160,7 +160,7 @@ document.querySelectorAll(".capteurFormations").forEach(function () {
         {
             opacity: 0,
             scrollTrigger: {
-                trigger: ".capteurFormations",
+                trigger: elem,
                 toggleActions: "restart none none reverse",
                 start: startAnimation,
                 end: endAnimation,
@@ -176,7 +176,7 @@ document.querySelectorAll(".capteurFormations").forEach(function () {
             y: -50,
             opacity: 0,
             scrollTrigger: {
-                trigger: ".capteurFormations",
+                trigger: elem,
                 toggleActions: "restart none none reverse",
                 start: startAnimation,
                 end: endAnimation,
@@ -185,7 +185,8 @@ document.querySelectorAll(".capteurFormations").forEach(function () {
             }
         }
     );
-})
+});
+
 
 document.querySelectorAll(".terminalBloc").forEach(function () {
     gsap.from(
@@ -334,7 +335,7 @@ document.querySelectorAll(".sectionBD").forEach((elem) => {
         start: "bottom 100%",
         end: "bottom 0%",
         pin: true,
-        //marker: true
+        //s: true
     });
 })
 
@@ -364,7 +365,7 @@ document.querySelectorAll(".sectionWeb").forEach((elem) => {
         start: "bottom 100%",
         end: "bottom 0%",
         pin: true,
-        //marker: true
+        //markers: true
     });
 })
 
@@ -392,7 +393,7 @@ document.querySelectorAll(".sectionDev").forEach((elem) => {
         start: "bottom 100%",
         end: "bottom 0%",
         pin: true,
-        //marker: true
+        //markers: true
     });
 })
 
@@ -421,7 +422,7 @@ document.querySelectorAll(".sectionLangue").forEach((elem) => {
         start: "bottom 100%",
         end: "bottom 0%",
         pin: true,
-        //marker: true
+        //markers: true
     });
 })
 
@@ -472,26 +473,30 @@ ScrollTrigger.create({
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-var startAnimation2 = "top -50%";
-var endAnimation2 = "top -80%";
+// var startAnimation2 = "top -50%";
+// var endAnimation2 = "top -80%";
 
-document.querySelectorAll(".transitionProjetBloc").forEach(function () {
-    gsap.from(
-        "#AnimInfoGauche, #AnimInfoDroite",
-        {
-            y: 200,
-            opacity: 0,
-            scrollTrigger: {
-                id: "transitionProjetBloc",
-                trigger: ".transitionProjetBloc",
-                toggleActions: "restart none none reverse",
-                start: startAnimation2,
-                end: endAnimation2,
-                scrub: true,
-                // markers: true
-            }
-        }
-    );
+var startAnimation2 = "top 40%";
+var endAnimation2 = "top 10%";
+
+document.querySelectorAll("#transitionProjetBloc").forEach((elem) => {
+
+    // gsap.from(
+    //     "#AnimInfoGauche, #AnimInfoDroite",
+    //     {
+    //         y: 200,
+    //         opacity: 0,
+    //         scrollTrigger: {
+    //             id: "transitionProjetBloc",
+    //             trigger: elem,
+    //             toggleActions: "restart none none reverse",
+    //             start: startAnimation2,
+    //             end: endAnimation2,
+    //             scrub: true,
+    //             markers: true
+    //         }
+    //     }
+    // );
 
     gsap.from(
         "header",
@@ -499,7 +504,7 @@ document.querySelectorAll(".transitionProjetBloc").forEach(function () {
             y: -50,
             opacity: 0,
             scrollTrigger: {
-                trigger: ".transitionProjetBloc",
+                trigger: elem,
                 toggleActions: "restart none none reverse",
                 start: startAnimation2,
                 end: endAnimation2,
@@ -508,7 +513,8 @@ document.querySelectorAll(".transitionProjetBloc").forEach(function () {
             }
         }
     );
-})
+});
+
 
 document.querySelectorAll(".projet").forEach((elem) => {
 
@@ -539,49 +545,6 @@ document.querySelectorAll(".projet").forEach((elem) => {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// // Ensure GSAP is loaded
-// document.querySelectorAll(".projet").forEach((projet) => {
-//     const name = projet.querySelector(".projectName");
-//     const resume = projet.querySelector(".projectResume");
-
-//     // Set initial state
-//     gsap.set(resume, {
-//         height: 0,
-//         opacity: 0,
-//         overflow: "hidden"
-//     });
-
-//     let isAnimating = false;
-
-//     // Hover in — expand accordion
-//     name.addEventListener("mouseenter", () => {
-//         if (isAnimating) return;
-//         isAnimating = true;
-
-//         gsap.to(resume, {
-//             height: "auto",
-//             opacity: 1,
-//             duration: 0.3,
-//             ease: "power2.out",
-//             onComplete: () => isAnimating = false
-//         });
-//     });
-
-//     // Hover out — collapse accordion
-//     name.addEventListener("mouseleave", () => {
-//         if (isAnimating) return;
-//         isAnimating = true;
-
-//         gsap.to(resume, {
-//             height: 0,
-//             opacity: 0,
-//             duration: 0.3,
-//             ease: "power2.in",
-//             onComplete: () => isAnimating = false
-//         });
-//     });
-// });
-
 document.querySelectorAll(".projet").forEach((projet) => {
     const name = projet.querySelector(".projectName");
     const resume = projet.querySelector(".projectResume");
@@ -602,7 +565,7 @@ document.querySelectorAll(".projet").forEach((projet) => {
 
 function reveal() {
 
-    if (cardImg[0].getBoundingClientRect().left == 0) {
+    if (document.querySelector("#capteurFormations").getBoundingClientRect().top < windowHeight * 0.6) {
 
         // Enleve
         document.querySelector(".imgVoyageurBloc").classList.add("v-hidden");
@@ -614,7 +577,6 @@ function reveal() {
 
         // Met
         document.querySelector("#formations").classList.remove("v-hidden");
-        document.querySelector(".capteurFormations").classList.remove("d-none");
     } else {
 
         // Enleve
@@ -627,23 +589,30 @@ function reveal() {
 
         // Met
         document.querySelector("#formations").classList.add("v-hidden");
-        document.querySelector(".capteurFormations").classList.remove("d-none");
     }
-
-
 
     if (document.querySelector("#transitionProjetBloc").getBoundingClientRect().top > windowHeight * -0.5) {
 
         document.querySelector("#transitionProjet").classList.remove("d-none");
         document.querySelector("#sectionProjets").classList.add("v-hidden");
         document.querySelector("body").classList.remove("blanc");
-        document.querySelector("#transitionProjetBloc").style.zIndex = 200;
+
+        // if (document.querySelector("#transitionProjetBloc").getBoundingClientRect().top < 0) {
+        //     document.querySelector("header").classList.add("fixHeader");
+        //     document.querySelector("#AnimInfoGauche").classList.add("fixHeader");
+        //     document.querySelector("#AnimInfoDroite").classList.add("fixHeader");
+        // } else {
+        //     document.querySelector("header").classList.remove("fixHeader");
+        //     document.querySelector("#AnimInfoGauche").classList.remove("fixHeader");
+        //     document.querySelector("#AnimInfoDroite").classList.remove("fixHeader");
+        // }
+
     } else {
 
         document.querySelector("#transitionProjet").classList.add("d-none");
         document.querySelector("#sectionProjets").classList.remove("v-hidden");
         document.querySelector("body").classList.add("blanc");
-        document.querySelector("#transitionProjetBloc").style.zIndex = 0;
+
     }
 }
 
