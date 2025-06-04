@@ -345,7 +345,7 @@ document.querySelectorAll(".sectionWeb").forEach((elem) => {
     gsap.from(
         elem,
         {
-            x: windowWidth,
+            x: -windowWidth,
             scrollTrigger: {
                 id: "sectionWeb",
                 trigger: elem,
@@ -402,7 +402,7 @@ document.querySelectorAll(".sectionLangue").forEach((elem) => {
     gsap.from(
         elem,
         {
-            x: windowWidth,
+            x: -windowWidth,
             scrollTrigger: {
                 id: "sectionLangue",
                 trigger: elem,
@@ -439,7 +439,7 @@ function createGrid() {
 
     for (var i = 0; i < 10; i++) {
         for (var j = 0; j < 10; j++) {
-            document.getElementById("transitionProjet").innerHTML += `
+            document.getElementById("transitionProject").innerHTML += `
                 <div class="pixel" style="width:${widthVW}vw;height:${heightVH}vh"></div>
                 `;
         }
@@ -450,11 +450,11 @@ function createGrid() {
 createGrid();
 
 
-gsap.from("#transitionProjet .pixel", {
+gsap.from("#transitionProject .pixel", {
     visibility: "hidden",
     stagger: { amount: 1, from: "random" },
     scrollTrigger: {
-        trigger: "#transitionProjet",
+        trigger: "#transitionProject",
         start: "top 15%",
         end: "top -30%",
         scrub: true,
@@ -464,7 +464,7 @@ gsap.from("#transitionProjet .pixel", {
 
 ScrollTrigger.create({
     id: "sticky",
-    trigger: "#transitionProjet",
+    trigger: "#transitionProject",
     start: "top 0%",
     end: "top -100%",
     pin: true,
@@ -473,50 +473,7 @@ ScrollTrigger.create({
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// var startAnimation2 = "top -50%";
-// var endAnimation2 = "top -80%";
-
-var startAnimation2 = "top 40%";
-var endAnimation2 = "top 10%";
-
-document.querySelectorAll("#transitionProjetBloc").forEach((elem) => {
-
-    // gsap.from(
-    //     "#AnimInfoGauche, #AnimInfoDroite",
-    //     {
-    //         y: 200,
-    //         opacity: 0,
-    //         scrollTrigger: {
-    //             id: "transitionProjetBloc",
-    //             trigger: elem,
-    //             toggleActions: "restart none none reverse",
-    //             start: startAnimation2,
-    //             end: endAnimation2,
-    //             scrub: true,
-    //             markers: true
-    //         }
-    //     }
-    // );
-
-    gsap.from(
-        "header",
-        {
-            y: -50,
-            opacity: 0,
-            scrollTrigger: {
-                trigger: elem,
-                toggleActions: "restart none none reverse",
-                start: startAnimation2,
-                end: endAnimation2,
-                scrub: true,
-                // markers: true
-            }
-        }
-    );
-});
-
-
-document.querySelectorAll(".projet").forEach((elem) => {
+document.querySelectorAll(".projectWeb").forEach((elem) => {
 
     const tl = gsap.timeline({
         scrollTrigger: {
@@ -545,18 +502,42 @@ document.querySelectorAll(".projet").forEach((elem) => {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-document.querySelectorAll(".projet").forEach((projet) => {
-    const name = projet.querySelector(".projectName");
-    const resume = projet.querySelector(".projectResume");
+document.querySelectorAll(".projectWeb").forEach((project) => {
+    const name = project.querySelector(".projectWebName");
+    const resume = project.querySelector(".projectWebResume");
 
-    projet.addEventListener("mouseenter", () => {
+    project.addEventListener("mouseenter", () => {
         resume.classList.add("open");
     });
 
-    projet.addEventListener("mouseleave", () => {
+    project.addEventListener("mouseleave", () => {
         resume.classList.remove("open");
     });
 });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+document.querySelectorAll(".projectJava").forEach((elem, index) => {
+    gsap.from(
+        elem,
+        {
+            x: windowWidth,
+            scrollTrigger: {
+                id: "sectionLangue",
+                trigger: elem,
+                toggleActions: "restart none none reverse",
+                start: "top 25%",
+                end: "top -25%",
+                scrub: true,
+                markers: true,
+            }
+        }
+    );
+
+
+    elem.style.top = (20 + 5 * index) + "vh";
+    elem.style.left = (20 + 3 * index) + "vw";
+})
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -591,27 +572,20 @@ function reveal() {
         document.querySelector("#formations").classList.add("v-hidden");
     }
 
-    if (document.querySelector("#transitionProjetBloc").getBoundingClientRect().top > windowHeight * -0.5) {
+    // Si projet
+    if (document.querySelector("#transitionProjectBloc").getBoundingClientRect().top > windowHeight * -0.5) {
 
-        document.querySelector("#transitionProjet").classList.remove("d-none");
-        document.querySelector("#sectionProjets").classList.add("v-hidden");
+        document.querySelector("#transitionProject").classList.remove("d-none");
+        document.querySelector("#projects").classList.add("v-hidden");
         document.querySelector("body").classList.remove("blanc");
-
-        // if (document.querySelector("#transitionProjetBloc").getBoundingClientRect().top < 0) {
-        //     document.querySelector("header").classList.add("fixHeader");
-        //     document.querySelector("#AnimInfoGauche").classList.add("fixHeader");
-        //     document.querySelector("#AnimInfoDroite").classList.add("fixHeader");
-        // } else {
-        //     document.querySelector("header").classList.remove("fixHeader");
-        //     document.querySelector("#AnimInfoGauche").classList.remove("fixHeader");
-        //     document.querySelector("#AnimInfoDroite").classList.remove("fixHeader");
-        // }
+        document.querySelector("footer").classList.add("d-none");
 
     } else {
 
-        document.querySelector("#transitionProjet").classList.add("d-none");
-        document.querySelector("#sectionProjets").classList.remove("v-hidden");
+        document.querySelector("#transitionProject").classList.add("d-none");
+        document.querySelector("#projects").classList.remove("v-hidden");
         document.querySelector("body").classList.add("blanc");
+        document.querySelector("footer").classList.remove("d-none");
 
     }
 }

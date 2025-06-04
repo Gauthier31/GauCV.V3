@@ -445,6 +445,10 @@ body {
     text-align: center;
 }
 
+.ta-right {
+    text-align: right;
+}
+
 .ta-justify {
     text-align: justify;
 }

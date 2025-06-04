@@ -27,6 +27,12 @@
     color: var(--blanc);
 }
 
+.blanc *::selection {
+    background-color: var(--blanc);
+    color: var(--noir);
+}
+
+
 @font-face {
     font-family: Alliance;
     src: url("../Alliance\ No.2\ Regular.otf") format("opentype");
@@ -101,6 +107,14 @@ a {
 
 .surligneAnim::before {
     background-color: var(--noir);
+}
+
+.blanc .surligneAnim:hover {
+    color: var(--noir) !important;
+}
+
+.blanc .surligneAnim::before {
+    background-color: var(--blanc);
 }
 
 .surligneAnim:hover::after {
@@ -250,6 +264,7 @@ body.blanc::-webkit-scrollbar-thumb {
     width: 100vw;
     padding: 25vh calc(100vw / 12);
     padding-bottom: 5vh;
+    background-color: var(--blanc);
     position: sticky;
     top: 0;
 }
@@ -360,6 +375,7 @@ h1 {
 /* ---------- Formation ---------- */
 #formations {
     margin-top: 150vh;
+    background-color: var(--blanc);
 }
 
 
@@ -419,6 +435,7 @@ h1 {
 
 #experiences {
     margin-bottom: 500px;
+    background-color: var(--blanc);
 }
 
 .experiencesVue {
@@ -592,6 +609,10 @@ h2 {
     font-size: min(100px, 7vw);
 }
 
+#competences {
+    background-color: var(--blanc);
+}
+
 .competenceBody {
     width: 100vw;
 }
@@ -642,38 +663,39 @@ h2 {
 
 /* -------------- Projet -------------- */
 
-#transitionProjetBloc {
+#transitionProjectBloc {
     margin-top: -60vh;
 }
 
-#transitionProjet {
+#transitionProject {
     position: absolute;
     height: 100vh;
     width: 100vw;
 
     display: flex;
     flex-wrap: wrap;
-    z-index: 200;
-    border: 1px solid var(--noir);
 }
 
 .pixel {
-    border: 1px solid var(--noir);
-    background-color: var(--noir);
+    background-color: var(--noir2);
     visibility: visible;
 }
 
-#sectionProjets {
+#projects {
     min-height: 200vh;
     width: 100vw;
-    background-color: var(--noir);
+    background-color: var(--noir2);
     color: var(--blanc);
     padding-top: 130vh;
-    padding-bottom: 50vh;
-    z-index: 1;
+    z-index: 0;
+    border-bottom: 1px solid var(--blanc);
 }
 
-.projet {
+.projectWebBloc {
+    margin-bottom: 75vh
+}
+
+.projectWeb {
     border: 1px solid var(--blanc);
     padding: 4%;
     width: 75vw;
@@ -681,18 +703,18 @@ h2 {
     overflow: hidden;
 }
 
-.projectName,
-.projectResume {
+.projectWebName,
+.projectWebResume {
     position: relative;
     z-index: 1;
 }
 
-.projectName {
+.projectWebName {
     font-size: 60px;
     font-weight: bold;
 }
 
-.projectResume {
+.projectWebResume {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -701,13 +723,13 @@ h2 {
     transition: max-height 0.3s ease, opacity 0.3s ease, padding-top 0.3s ease;
 }
 
-.projectResume.open {
+.projectWebResume.open {
     max-height: 500px;
     opacity: 1;
     padding-top: 4%;
 }
 
-.projectImg {
+.projectWebImg {
     position: absolute;
     right: 0;
     top: 0;
@@ -718,26 +740,75 @@ h2 {
     pointer-events: none;
 }
 
+.projectEspace {
+    height: 75vh;
+}
+
+
+.projectJavaBloc {
+    margin-bottom: 100vh
+}
+
+.projectJava {
+    height: min(60vh, 60vw);
+    width: min(60vh, 60vw);
+    background-color: var(--blanc);
+    padding: 3%;
+    z-index: 1;
+    border: 1px solid var(--noir);
+    color: var(--noir);
+
+    position: sticky;
+}
+
+.projectJava>*::selection {
+    color: var(--blanc);
+    background-color: var(--noir);
+}
+
+.projectJavaName,
+.projectJavaResume {
+    position: relative;
+    z-index: 1;
+}
+
+.projectJavaName {
+    font-size: 40px;
+    padding-bottom: 12px;
+}
+
+.projectProBloc {
+    margin-bottom: 15vh
+}
+
 /* -------------- Footer -------------- */
 
 footer {
-    margin-top: 100vh;
-    padding: 0 7px;
-    text-transform: upperpixel;
-    position: relative;
-    z-index: 100;
-    background-color: var(--blanc);
-    box-shadow: 0px -20px 10px -10px rgb(0 0 0 / 0.2);
-}
+    width: 100%;
+    padding: 3% calc(100vw / 12 / 2);
+    background-color: var(--noir2);
+    text-transform: uppercase;
 
-footer>hr {
-    margin-top: 0;
+    position: sticky;
+    bottom: 0;
+    z-index: -1;
 }
 
 .fsFooter1 {
-    font-size: 14px
+    font-size: 20px
 }
 
 .fsFooter2 {
-    font-size: 10px
+    font-size: 16px
+}
+
+h3 {
+    font-size: min(160px, 14vw);
+    text-transform: none;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.txtBlancSecond {
+    color: #e5e5e5
 }
