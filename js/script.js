@@ -175,36 +175,3 @@ detail.forEach(div => {
         fill.style.left = relX + "px";
     });
 });
-
-////////////////////////////////////////////////// Detail /////////////////////////////////////////////////
-
-function reveal() {
-
-    if (cardImg[0].getBoundingClientRect().left == 0) {
-
-        // Enleve
-        document.querySelector(".imgVoyageurBloc").classList.add("v-hidden");
-        document.querySelector(".acceuil").classList.add("v-hidden");
-
-        document.querySelector("header").classList.remove("fixHeader");
-        document.querySelector("#AnimInfoGauche").classList.remove("fixHeader");
-        document.querySelector("#AnimInfoDroite").classList.remove("fixHeader");
-
-        // Met
-        document.querySelector("#formations").classList.remove("v-hidden");
-        document.querySelector("#capteurFormations").classList.remove("d-none");
-    } else {
-
-        // Enleve
-        document.querySelector(".imgVoyageurBloc").classList.remove("v-hidden");
-        document.querySelector(".acceuil").classList.remove("v-hidden");
-
-        document.querySelector("header").classList.add("fixHeader");
-        document.querySelector("#AnimInfoGauche").classList.add("fixHeader");
-        document.querySelector("#AnimInfoDroite").classList.add("fixHeader");
-
-        // Met
-        document.querySelector("#formations").classList.add("v-hidden");
-        document.querySelector("#capteurFormations").classList.remove("d-none");
-    }
-}

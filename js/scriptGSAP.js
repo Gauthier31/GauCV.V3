@@ -70,7 +70,6 @@ document.querySelectorAll(".resume").forEach((elem) => {
     });
 });
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////// Aceuil /////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -222,12 +221,12 @@ document.querySelectorAll(".expProDetail").forEach((expBlock, blockIndex) => {
                 start: "top 100%",
                 end: "top 50%",
                 toggleActions: "play none none reverse",
-                scrub: true
-                // markers: true
+                scrub: true,
+                markers: true
             },
             x: isWindowAbove1200
                 ? (blockIndex % 2 === 0 ? 300 : -300)
-                : 0,
+                : 300,
             opacity: 0,
         });
     });
@@ -529,7 +528,7 @@ document.querySelectorAll(".projectJava").forEach((elem, index) => {
                 start: "top 25%",
                 end: "top -25%",
                 scrub: true,
-                markers: true,
+                //markers: true,
             }
         }
     );
@@ -589,6 +588,27 @@ function reveal() {
 
     }
 }
+reveal()
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+document.querySelectorAll("#progressNav").forEach((elem) => {
+    gsap.from(
+        elem,
+        {
+            width: 0,
+            scrollTrigger: {
+                id: "body",
+                trigger: "body",
+                toggleActions: "restart none none reverse",
+                start: "top 0%",
+                end: "bottom 100%",
+                scrub: true,
+                //markers: true,
+            }
+        }
+    );
+})
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
