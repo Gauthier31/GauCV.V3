@@ -41,34 +41,34 @@ var terminalBloc = document.querySelectorAll(".terminalBloc");
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ -";
 const intervals = {};
 
-document.querySelectorAll(".resume").forEach((elem) => {
-    const targetText = elem.innerText;
-    const words = targetText.split(" ");
-    let scrambledWords = [];
+// document.querySelectorAll(".resume").forEach((elem) => {
+//     const targetText = elem.innerText;
+//     const words = targetText.split(" ");
+//     let scrambledWords = [];
 
-    words.forEach((word, wordIndex) => {
-        let iteration = 0;
-        let scrambledWord = "";
+//     words.forEach((word, wordIndex) => {
+//         let iteration = 0;
+//         let scrambledWord = "";
 
-        const interval = setInterval(() => {
-            scrambledWord = word.split("").map((letter, index) => {
-                if (index < iteration) {
-                    return word[index];
-                }
-                return letters[Math.floor(Math.random() * letters.length)];
-            }).join("");
+//         const interval = setInterval(() => {
+//             scrambledWord = word.split("").map((letter, index) => {
+//                 if (index < iteration) {
+//                     return word[index];
+//                 }
+//                 return letters[Math.floor(Math.random() * letters.length)];
+//             }).join("");
 
-            scrambledWords[wordIndex] = scrambledWord;
-            elem.innerText = scrambledWords.join(" ");
+//             scrambledWords[wordIndex] = scrambledWord;
+//             elem.innerText = scrambledWords.join(" ");
 
-            if (iteration >= word.length) {
-                clearInterval(interval);
-            }
+//             if (iteration >= word.length) {
+//                 clearInterval(interval);
+//             }
 
-            iteration += 1 / 3;
-        }, 50);
-    });
-});
+//             iteration += 1 / 3;
+//         }, 50);
+//     });
+// });
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////// Aceuil /////////////////////////////////////////////////
@@ -195,8 +195,8 @@ document.querySelectorAll(".terminalBloc").forEach(function () {
                 id: "terminalBloc",
                 trigger: ".terminalBloc",
                 toggleActions: "restart none none reverse",
-                start: "top 20%",
-                end: "top -30%",
+                start: "top 10%",
+                end: "top -100%",
                 scrub: true,
                 pin: true,
                 //markers: true
@@ -222,7 +222,7 @@ document.querySelectorAll(".expProDetail").forEach((expBlock, blockIndex) => {
                 end: "top 50%",
                 toggleActions: "play none none reverse",
                 scrub: true,
-                markers: true
+                //markers: true
             },
             x: isWindowAbove1200
                 ? (blockIndex % 2 === 0 ? 300 : -300)
@@ -502,15 +502,14 @@ document.querySelectorAll(".projectWeb").forEach((elem) => {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 document.querySelectorAll(".projectWeb").forEach((project) => {
-    const name = project.querySelector(".projectWebName");
-    const resume = project.querySelector(".projectWebResume");
+    const projectresume = project.querySelector(".projectWebResume");
 
     project.addEventListener("mouseenter", () => {
-        resume.classList.add("open");
+        projectresume.classList.add("open");
     });
 
     project.addEventListener("mouseleave", () => {
-        resume.classList.remove("open");
+        projectresume.classList.remove("open");
     });
 });
 

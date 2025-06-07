@@ -235,6 +235,10 @@ body {
     justify-content: flex-end;
 }
 
+.jc-end {
+    justify-content: end;
+}
+
 /* ---------- Gap ---------- */
 .g-5 {
     gap: 5px;

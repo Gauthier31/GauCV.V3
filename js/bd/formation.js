@@ -1,7 +1,7 @@
 const FORMATION = [
     [
         [
-            "C:\\User\\Étudiant\\Lycée\\Lycée Stéphanne HESSEL>",
+            "Parle moi du Lycée",
             "C:\\User\\Student\\College\\College Stéphanne HESSEL>",
         ],
         [
@@ -19,7 +19,7 @@ const FORMATION = [
     ],
     [
         [
-            "C:\\User\\Étudiant\\IUT\\Informatique>",
+            "Parle moi de l'IUT",
             "C:\\User\\Student\\UT\\IT>",
         ],
         [
@@ -41,7 +41,7 @@ const FORMATION = [
     ],
     [
         [
-            "C:\\User\\Alternance\\Licence Professionnelle\\MIASHS>",
+            "Parle moi de la Licence",
             "C:\\User\\Sandwich Courses\\Professional Bachelor degree\\MIASHS>"
         ],
         [
@@ -63,7 +63,7 @@ const FORMATION = [
     ],
     [
         [
-            "C:\\User\\Alternance\\Master Professionnelle\\MIAGE\>",
+            "Parle moi du Master",
             "C:\\User\\Sandwich Courses\\Professional Master degree\\MIAGE>"
         ],
         [

@@ -5,6 +5,8 @@ function textScrambled(event, txt) {
         clearInterval(intervals[txt]);
     }
 
+    event.style.width = event.offsetWidth + "px";
+
     let iteration = 0;
 
     intervals[txt] = setInterval(() => {
@@ -33,8 +35,8 @@ function textScrambled(event, txt) {
 
 let pourcentageTxt = document.getElementById("pourcentageTxt");
 let progressionBloc = document.getElementById("progression");
-let progEncours = document.getElementById("progEncours");
-let terminalElement = document.getElementById("terminalBody");
+// let progEncours = document.getElementById("progEncours");
+let terminalElement = document.getElementById("terminal");
 
 let tabIdTimeOut = [-1];
 let timerId;
@@ -44,7 +46,7 @@ var idLangue = 0;
 
 // Ecriture dans le temrinal
 let formation;
-progEncours.style.visibility = "hidden";
+//progEncours.style.visibility = "hidden";
 
 let progress = 0;
 let speed = 10; // Vitesse de frappe (en millisecondes par caractère)
@@ -52,21 +54,36 @@ let speed = 10; // Vitesse de frappe (en millisecondes par caractère)
 let phrase;
 let char;
 
-function progression(val) {
 
-    // Barre de progressio
-    numFormation = (numFormation + val < 0 || numFormation + val > FORMATION.length) ? numFormation : numFormation + val;
+let select = document.querySelector(".select");
+let options = document.querySelector(".options");
 
-    // Flèche choix
-    if (numFormation == 0) {
-        document.getElementById("progLeft").style.visibility = "hidden"
-    } else if (numFormation == FORMATION.length - 1) {
-        document.getElementById("progRight").style.visibility = "hidden"
+let arrowUp = document.querySelector("#arrowUp");
+let arrowDown = document.querySelector("#arrowDown");
+let option = document.querySelectorAll(".option");
+
+option.forEach((op, index) => {
+    op.addEventListener("click", () => progression(index))
+})
+
+function optionOpen() {
+
+    if (options.classList.contains("d-none")) {
+        options.classList.remove("d-none")
+        arrowDown.classList.add("d-none")
+        arrowUp.classList.remove("d-none")
     } else {
-        document.getElementById("progLeft").style.visibility = "visible"
-        document.getElementById("progRight").style.visibility = "visible"
+        options.classList.add("d-none")
+        arrowUp.classList.add("d-none")
+        arrowDown.classList.remove("d-none")
     }
-    progressionBloc.style.width = FORMATION[numFormation][FORMATION[numFormation].length - 1][idLangue] + "%";
+}
+
+function progression(numFormation) {
+
+    options.classList.add("d-none");
+    arrowUp.classList.add("d-none")
+    arrowDown.classList.remove("d-none")
 
     // Arrêtez toutes les minuteries en cours
     while (tabIdTimeOut.length > 1) {
@@ -82,12 +99,15 @@ function progression(val) {
 function typeText() {
 
 
-    progEncours.style.visibility = "visible";
+    // progEncours.style.visibility = "visible";
 
     // On écrit le répertoire / titre
     if (progress == 0) {
         phrase = formation[progress][idLangue];
-        terminalElement.innerHTML += "<br/><br/><br/><span class='repertoire'>" + phrase + "</span><br/>";
+        terminalElement.innerHTML += `
+            <div class="row jc-end">
+                <span class='message'>${phrase}</span>
+            </div>`;
         terminalElement.scrollTop = terminalElement.scrollHeight;
         progress++
     }
@@ -98,7 +118,7 @@ function typeText() {
         char = 0;
         typePhrase();
     } else {
-        progEncours.style.visibility = "hidden";
+        // progEncours.style.visibility = "hidden";
     }
 }
 
@@ -127,8 +147,8 @@ function afficherTailleBloc() {
     pourcentageTxt.innerHTML = largeurEnPourcentage.toFixed(0) + "%";
 }
 
-const observer2 = new ResizeObserver(afficherTailleBloc);
-observer2.observe(progressionBloc);
+// const observer2 = new ResizeObserver(afficherTailleBloc);
+// observer2.observe(progressionBloc);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////// Experiences ///////////////////////////////////////////////
@@ -146,19 +166,23 @@ document.querySelectorAll(".pixelTab div img").forEach(element => {
 
 ////////////////////////////////////////////////// Interet /////////////////////////////////////////////////
 
-const interet = document.querySelectorAll('.interet.circleHover');
+// const interet = document.querySelectorAll('.interet.circleHover');
 
-interet.forEach(div => {
-    div.addEventListener("mousemove", function (e) {
-        const rect = div.getBoundingClientRect();
-        const relX = e.clientX - rect.left;
-        const relY = e.clientY - rect.top;
+// interet.forEach(div => {
+//     div.addEventListener("mousemove", function (e) {
+//         const rect = div.getBoundingClientRect();
+//         const relX = e.clientX - rect.left;
+//         const relY = e.clientY - rect.top;
 
-        const fill = div.querySelector(".circleInteret");
-        fill.style.top = relY + "px";
-        fill.style.left = relX + "px";
-    });
-});
+//         const fill = div.querySelector(".circleInteret");
+//         fill.style.top = relY + "px";
+//         fill.style.left = relX + "px";
+//     });
+// });
+
+document.querySelectorAll(".interetBloc").forEach((elem) => {
+    elem.innerHTML += elem.innerHTML;
+})
 
 ////////////////////////////////////////////////// Detail /////////////////////////////////////////////////
 
