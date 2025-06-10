@@ -304,7 +304,6 @@ h1 {
     font-size: 60px;
     text-transform: uppercase;
     padding: 5px 50px;
-    border-radius: 10px;
     border: 1px solid var(--backgroundBlack);
     color: var(--colorBlack);
     transition: box-shadow .3s ease-in-out;
@@ -411,7 +410,7 @@ h1 {
 #terminal {
     font-family: monospace;
     color: var(--colorBlack);
-    height: 65vh;
+    height: 60vh;
     overflow-y: auto;
     line-height: 15px;
     font-size: 16px;
@@ -423,7 +422,7 @@ h1 {
 #terminal::-webkit-scrollbar {
     width: 12px;
     background-color: var(--colorWhite);
-    height: 25px;
+    height: 15px;
 }
 
 #terminal::-webkit-scrollbar-track {
@@ -726,6 +725,25 @@ h2 {
     background: linear-gradient(45deg, #FF5722, #FF9800, #FFC107);
 }
 
+.competencesTxt {
+    font-size: 28px;
+}
+
+.path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 5s linear alternate infinite;
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: 822;
+    }
+}
 
 /* -------------- Projet -------------- */
 
