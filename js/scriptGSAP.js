@@ -425,6 +425,63 @@ document.querySelectorAll(".sectionLangue").forEach((elem) => {
     });
 })
 
+document.querySelectorAll(".competencesLigneTxt").forEach((elem) => {
+
+    gsap.from(
+        elem,
+        {
+            y: 100,
+            opacity: 0,
+            scrollTrigger: {
+                id: "competencesTxt",
+                trigger: elem,
+                toggleActions: "restart none none reverse",
+                start: "top 0%",
+                end: "top -30%",
+                scrub: true,
+                // markers: true,
+            }
+        }
+    )
+})
+
+document.querySelectorAll(".competencesImgBloc").forEach((bloc) => {
+    gsap.from(bloc.querySelectorAll(".competencesImg"), {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.3,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: bloc,
+            toggleActions: "restart none none reverse",
+            start: "top -30%",
+            end: "top -50%",
+            scrub: true
+        }
+    });
+});
+
+document.querySelectorAll("path.path").forEach((path) => {
+    const length = path.getTotalLength();
+
+    // Initialisation CSS
+    path.style.strokeDasharray = length;
+    path.style.strokeDashoffset = length;
+
+    // Animation GSAP avec ScrollTrigger
+    gsap.to(path, {
+        strokeDashoffset: 0,
+        ease: "none",
+        scrollTrigger: {
+            trigger: path,
+            start: "top -30%",
+            end: "bottom -20%",
+            scrub: true,
+        }
+    });
+});
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////// Projets ///////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
