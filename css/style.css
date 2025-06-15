@@ -233,7 +233,7 @@ nav::before {
 }
 
 .partie {
-    padding: 0 calc(100vw / 12);
+    padding: 0 max(calc(100vw / 12), calc((100vw - 1200px) / 2));
     padding-top: 15vh;
 }
 
